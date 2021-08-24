@@ -4,11 +4,6 @@ mod tests {
     use algorithms::math_algorithms::*;
     use test_case::test_case;
 
-    #[test]
-    fn get_abs_val_of_negative() {
-        assert_eq!(abs_val(-3), 3);
-    }
-
     #[test_case(1, 1)]
     #[test_case(2, 2)]
     #[test_case(3, 6)]
