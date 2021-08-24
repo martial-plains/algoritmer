@@ -1,11 +1,3 @@
-pub fn abs_val(num: i32) -> i32 {
-    if num < 0 {
-        -num
-    } else {
-        num
-    }
-}
-
 pub fn abs_max(x: Vec<i32>) -> i32 {
     let mut j = x[0];
     for i in x {
