@@ -11,7 +11,7 @@
 ///
 /// * `s` - The text to be searched
 /// * `w` - The word sought
-pub fn kmp_search(s: &str, w: &str) -> (Vec<usize>, i32) {
+pub fn kmp_search(s: &str, w: &str) -> Result<(Vec<usize>, i32), &'static str> {
     let mut j = 0; // The position of the current character in `s`
     let mut k = 0; // The position of the current character in `w`
     let table = kmp_table(w);
@@ -33,7 +33,7 @@ pub fn kmp_search(s: &str, w: &str) -> (Vec<usize>, i32) {
             }
         }
     }
-    (p, n_p as i32)
+    Ok((p, n_p as i32))
 }
 
 /// Returns an array of integers (the table to be filled)
