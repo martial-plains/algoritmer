@@ -11,7 +11,7 @@
 /// ```
 /// let data = [0, 5, 3, 2, 2];
 /// comb_sort(data);
-/// println("{}", data); // [0, 2, 2, 3, 5]
+/// println!("{}", data); // [0, 2, 2, 3, 5]
 ///
 /// ```
 pub fn comb_sort<T>(data: &mut [T])
