@@ -1,7 +1,9 @@
 pub mod kmp;
 
-pub fn naive_pattern_search(s: String, pattern: &str) -> Vec<i32> {
-    s.char_indices()
+/// A simple and inefficient way to see where one string occurs inside another 
+/// is to check each place it could be, one by one, to see if it's there.
+pub fn naive_pattern_search(s: String, pattern: &str) -> Result<Vec<i32>, &str> {
+    Ok(s.char_indices()
         .map(|(i, x)| {
             let myv = pattern.chars().nth(0).unwrap();
 
@@ -13,5 +15,5 @@ pub fn naive_pattern_search(s: String, pattern: &str) -> Vec<i32> {
         })
         .filter(|(_i, x)| pattern == *x)
         .map(|(i, _x)| i)
-        .collect()
+        .collect::<Vec<i32>>())
 }
