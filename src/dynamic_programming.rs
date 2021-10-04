@@ -3,7 +3,7 @@ use std::collections::HashMap;
 
 pub fn memoize<A, R, F>(cache: &mut HashMap<A, R>, func: F, arg: A) -> R
 where
-    A: Eq + Hash + Clone,
+    A: Hash + Eq + Clone,
     R: Clone,
     F: Fn(&mut HashMap<A, R>, A) -> R,
 {
