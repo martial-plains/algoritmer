@@ -1,4 +1,4 @@
-use algorithms::strings_algorithms::remove_duplicates;
+use algorithms::strings::remove_duplicates;
 
 fn main() {
     let value = remove_duplicates(

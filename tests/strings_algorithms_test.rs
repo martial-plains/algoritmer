@@ -3,7 +3,7 @@ mod tests {
     extern crate test_case;
 
     use std::collections::HashMap;
-    use algorithms::strings_algorithms::*;
+    use algorithms::strings::*;
     use test_case::test_case;
 
     #[test_case("123 hello world", "123 hello world".to_string())]

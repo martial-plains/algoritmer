@@ -1,7 +1,7 @@
 #[cfg(test)]
 mod tests {
     extern crate test_case;
-    use algorithms::math_algorithms::*;
+    use algorithms::math::*;
     use test_case::test_case;
 
     #[test_case(1, 1)]

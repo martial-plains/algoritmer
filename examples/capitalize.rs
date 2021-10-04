@@ -1,4 +1,4 @@
-use algorithms::strings_algorithms::capitalize;
+use algorithms::strings::capitalize;
 
 fn main() {
     let mut text = String::from("hello world!");

@@ -1,6 +1,6 @@
 pub mod dynamic_programming;
-pub mod math_algorithms;
-pub mod strings_algorithms;
+pub mod math;
+pub mod strings;
 
 pub mod sorts;
 #[cfg(test)]
