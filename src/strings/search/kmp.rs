@@ -5,7 +5,8 @@
 /// found) and an integer (number of positions)
 ///
 /// # Wikipedia
-/// https://en.wikipedia.org/wiki/Knuth–Morris–Pratt_algorithm
+/// 
+/// <https://en.wikipedia.org/wiki/Knuth–Morris–Pratt_algorithm>
 ///
 /// # Arguments
 ///

@@ -35,7 +35,7 @@ pub fn is_anagram(str1: &str, str2: &str) -> bool {
     a == b
 }
 
-/// wiki: https://en.wikipedia.org/wiki/Pangram
+/// wiki: <https://en.wikipedia.org/wiki/Pangram>
 pub fn is_pangram(text: &str) -> bool {
     let mut flags = [false; 26];
     for ch in text.to_ascii_lowercase().chars() {
