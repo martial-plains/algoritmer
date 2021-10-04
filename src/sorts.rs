@@ -9,6 +9,9 @@
 /// # Examples
 ///
 /// ```
+///
+/// use algorithms::sorts::comb_sort;
+///
 /// let data = [0, 5, 3, 2, 2];
 /// comb_sort(data);
 /// println!("{:#?}", data); // [0, 2, 2, 3, 5]
