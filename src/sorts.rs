@@ -83,7 +83,7 @@ fn comb_sort_test() {
 /// # Examples
 /// 
 /// ```
-/// use algorithm::sorts::wiggle_sort;
+/// use algorithms::sorts::wiggle_sort;
 /// 
 /// let mut data = [3, 5, 2, 1, 6, 4];
 /// wiggle_sort(&mut data);
