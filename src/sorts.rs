@@ -39,6 +39,56 @@ fn bead_sort_test() {
     assert_eq!(expected, actual);
 }
 
+/// A pure Rust implementation of the bogosort algorithm.
+/// The function successively generates permutations of its input
+/// until it finds one that is sorted
+/// This is a highly inefficient sorting algorithm so it is not
+/// useful for sorting but may be good for educational purposes
+/// 
+/// <https://en.wikipedia.org/wiki/Bogosort>
+///
+/// # Arguments
+///
+/// * `collection` - some mutable ordered collection with heterogeneous
+/// comparable items inside
+pub fn bogosort<T>(collection: &mut [T])
+where
+    T: PartialEq + PartialOrd,
+{
+    use rand::seq::SliceRandom;
+    use rand::thread_rng;
+
+    let mut rng = thread_rng();
+
+    fn is_sorted<T>(collection: &mut [T]) -> bool
+    where
+        T: PartialEq + PartialOrd,
+    {
+        if collection.len() < 2 {
+            return true;
+        }
+        for i in 0..collection.len() - 1 {
+            if collection[i] > collection[i + 1] {
+                return false;
+            }
+        }
+        true
+    }
+
+    while !is_sorted(collection) {
+        collection.shuffle(&mut rng);
+    }
+}
+
+#[test]
+fn bogosort_test() {
+    let mut collection = vec![0, 5, 3, 2, 2];
+    let expected = vec![0, 2, 2, 3, 5];
+    bogosort(&mut collection);
+    let actual = collection;
+    assert_eq!(expected, actual);
+}
+
 /// Comb sort algorithm is a simple sorting algorithm. It improves
 /// on the bubble sort in the same way that Shellsort improves on
 /// insertion sort
@@ -114,23 +164,23 @@ fn comb_sort_test() {
 }
 
 /// Wiggle Sort.
-/// 
+///
 /// Given an unsorted array `nums` reorder it such
 /// that `nums[0]` < `nums[1]` > `nums[2]` < `nums[3]`
-/// 
+///
 /// #Arguments
-/// 
-/// * `data` - The array being sorted 
+///
+/// * `data` - The array being sorted
 /// # Examples
-/// 
+///
 /// ```
 /// use algorithms::sorts::wiggle_sort;
-/// 
+///
 /// let mut data = [3, 5, 2, 1, 6, 4];
 /// wiggle_sort(&mut data);
-/// 
+///
 /// println!("{:?}", data); // [3, 5, 1, 6, 2, 4]
-/// 
+///
 /// ```
 pub fn wiggle_sort<T>(nums: &mut [T])
 where
