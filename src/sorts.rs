@@ -30,21 +30,12 @@ where
     }
 }
 
-#[test]
-fn bead_sort_test() {
-    let mut vector = vec![9, 8, 7, 6, 5, 4, 3, 2, 1];
-    let expected = vec![1, 2, 3, 4, 5, 6, 7, 8, 9];
-    bead_sort(&mut vector);
-    let actual = vector;
-    assert_eq!(expected, actual);
-}
-
 /// A pure Rust implementation of the bogosort algorithm.
 /// The function successively generates permutations of its input
 /// until it finds one that is sorted
 /// This is a highly inefficient sorting algorithm so it is not
 /// useful for sorting but may be good for educational purposes
-/// 
+///
 /// <https://en.wikipedia.org/wiki/Bogosort>
 ///
 /// # Arguments
@@ -78,15 +69,6 @@ where
     while !is_sorted(collection) {
         collection.shuffle(&mut rng);
     }
-}
-
-#[test]
-fn bogosort_test() {
-    let mut collection = vec![0, 5, 3, 2, 2];
-    let expected = vec![0, 2, 2, 3, 5];
-    bogosort(&mut collection);
-    let actual = collection;
-    assert_eq!(expected, actual);
 }
 
 /// Comb sort algorithm is a simple sorting algorithm. It improves
@@ -154,15 +136,6 @@ where
     }
 }
 
-#[test]
-fn comb_sort_test() {
-    let mut vector = vec![99, 45, -7, 8, 2, 0, -15, 3];
-    let expected = vec![-15, -7, 0, 2, 3, 8, 45, 99];
-    comb_sort(&mut vector);
-    let actual = vector;
-    assert_eq!(expected, actual);
-}
-
 /// Wiggle Sort.
 ///
 /// Given an unsorted array `nums` reorder it such
@@ -195,11 +168,42 @@ where
     })
 }
 
-#[test]
-fn wiggle_sort_test() {
-    let mut vector = vec![0, 5, 3, 2, 2];
-    let expected = vec![0, 5, 2, 3, 2];
-    wiggle_sort(&mut vector);
-    let actual = vector;
-    assert_eq!(expected, actual);
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn bead_sort_test() {
+        let mut vector = vec![9, 8, 7, 6, 5, 4, 3, 2, 1];
+        let expected = vec![1, 2, 3, 4, 5, 6, 7, 8, 9];
+        bead_sort(&mut vector);
+        let actual = vector;
+        assert_eq!(expected, actual);
+    }
+
+    #[test]
+    fn bogosort_test() {
+        let mut collection = vec![0, 5, 3, 2, 2];
+        let expected = vec![0, 2, 2, 3, 5];
+        bogosort(&mut collection);
+        let actual = collection;
+        assert_eq!(expected, actual);
+    }
+    #[test]
+    fn comb_sort_test() {
+        let mut vector = vec![99, 45, -7, 8, 2, 0, -15, 3];
+        let expected = vec![-15, -7, 0, 2, 3, 8, 45, 99];
+        comb_sort(&mut vector);
+        let actual = vector;
+        assert_eq!(expected, actual);
+    }
+
+    #[test]
+    fn wiggle_sort_test() {
+        let mut vector = vec![0, 5, 3, 2, 2];
+        let expected = vec![0, 5, 2, 3, 2];
+        wiggle_sort(&mut vector);
+        let actual = vector;
+        assert_eq!(expected, actual);
+    }
 }
