@@ -1,23 +1,12 @@
-pub fn abs_max(x: Vec<i32>) -> i32 {
-    let mut j = x[0];
-    for i in x {
-        if i.abs() > j.abs() {
-            j = i;
-        };
-    }
-    j
-}
+mod abs;
+pub mod fibonacci;
+pub use abs::*;
 
-pub fn abs_min(x: Vec<i32>) -> i32 {
-    let mut j = x[0];
-    for i in x {
-        if i.abs() < j.abs() {
-            j = i;
-        };
-    }
-    j
-}
-
+/// Calculates the factorial of the input
+/// 
+/// # Arguments
+/// 
+/// * `num` - The number to calculate the factorial of
 pub fn calculate_factorial(num: i32) -> i32 {
     if num < 0 {
         panic!("No Factorial for negative numbers");
@@ -27,6 +16,10 @@ pub fn calculate_factorial(num: i32) -> i32 {
 }
 
 /// Return the ceiling of x as an Integral.
+/// 
+/// # Arguments
+/// 
+/// * `number` - The number to calculate the ceiling of
 pub fn ceil(number: f32) -> i32 {
     if number - (number as i32) as f32 <= 0.0 {
         number as i32
@@ -35,9 +28,11 @@ pub fn ceil(number: f32) -> i32 {
     }
 }
 
-pub mod fibonacci;
-
-/// Return the floor of x as an Integral.
+/// Return the floor of `number` as an Integral.
+/// 
+/// # Arguments
+/// 
+/// * `number` - The number to calculate the floor of
 pub fn floor(number: f32) -> i32 {
     if (number as i32) as f32 - number == 0.0 {
         number as i32
@@ -46,6 +41,11 @@ pub fn floor(number: f32) -> i32 {
     }
 }
 
+/// Returns true if a number is perfect.
+/// 
+/// # Arguments
+/// 
+/// * `number` - The number to check
 pub fn is_perfect(number: i32) -> bool {
     match number {
         x if x <= 0 => false,
@@ -53,6 +53,12 @@ pub fn is_perfect(number: i32) -> bool {
     }
 }
 
-pub fn power(x: i32, power_of: i32) -> i32 {
-    (1..=power_of).fold(1, |acc, _| -> i32 { acc * x })
+/// Returns the power of a number.
+/// 
+/// # Arguments
+/// 
+/// * `base` - The base of the power
+/// * `exponent` - The exponent of the power
+pub fn power(base: i32, exponent: i32) -> i32 {
+    (1..=exponent).fold(1, |acc, _| -> i32 { acc * base })
 }
