@@ -5,7 +5,7 @@
 /// found) and an integer (number of positions)
 ///
 /// # Wikipedia
-/// 
+///
 /// <https://en.wikipedia.org/wiki/Knuth–Morris–Pratt_algorithm>
 ///
 /// # Arguments
@@ -42,7 +42,7 @@ pub fn kmp_search(s: &str, w: &str) -> Result<(Vec<usize>, i32), &'static str> {
 /// # Arguments
 ///
 /// * `w` - The word to be analyzed
-pub fn kmp_table(w: &str) -> Vec<i32> {
+fn kmp_table(w: &str) -> Vec<i32> {
     let mut t: Vec<i32> = Vec::default();
     let mut pos = 1; // The current position we are computing in `t`
     let mut cnd = 0; // The zero-based index in `w` of the next character of the current candidate substring
