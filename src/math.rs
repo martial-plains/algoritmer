@@ -65,8 +65,7 @@ pub fn power(base: i32, exponent: i32) -> i32 {
 
 #[cfg(test)]
 mod tests {
-    extern crate test_case;
-    use algorithms::math::*;
+    use super::*;
     use test_case::test_case;
 
     #[test_case(1, 1)]
