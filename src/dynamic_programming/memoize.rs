@@ -1,6 +1,9 @@
 use core::hash::Hash;
 use std::collections::HashMap;
 
+/// Memoization is a method used to reduce function calls in recursive functions or other functions that are called very frequently
+///
+/// [Wikipedia](https://en.wikipedia.org/wiki/Memoization)
 pub fn memoize<A, R, F>(cache: &mut HashMap<A, R>, func: F, arg: A) -> R
 where
     A: Hash + Eq + Clone,
@@ -11,7 +14,7 @@ where
         Some(result) => result,
         None => {
             let result = func(cache, arg.clone());
-            cache.insert(arg, result.clone());
+            let _ = cache.insert(arg, result.clone());
             result
         }
     }

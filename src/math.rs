@@ -1,3 +1,5 @@
+//! Perform mathematical operations and manipulate integer, float, and double values.
+
 mod abs;
 mod calculate_factorial;
 mod ceil;

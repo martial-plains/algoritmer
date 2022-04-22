@@ -1,5 +1,6 @@
 /// Return the absolute maximum of a list of items.
 pub trait AbsMax {
+    /// The type of the return item.
     type Item;
     /// Return the minimum value of the collection.
     fn abs_max(&self) -> Self::Item;
@@ -7,6 +8,7 @@ pub trait AbsMax {
 
 /// Return the minimum value of the collection.
 pub trait AbsMin {
+    /// The type of the return item.
     type Item;
     /// Return the minimum value of the collection.
     fn abs_min(&self) -> Self::Item;

@@ -34,7 +34,7 @@ pub fn kmp_search(s: &str, w: &str) -> Result<(Vec<usize>, i32), &'static str> {
             }
         }
     }
-    Ok((p, n_p as i32))
+    Ok((p, n_p))
 }
 
 /// Returns an array of integers (the table to be filled)

@@ -1,3 +1,5 @@
+//! Useful algorithms for searching strings
+
 mod brute_force;
 mod kmp;
 mod naive_pattern_search;

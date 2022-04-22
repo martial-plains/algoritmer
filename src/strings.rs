@@ -1,3 +1,5 @@
+//! Useful algorithms for working with strings
+
 mod capitalize;
 mod is_anagram;
 mod is_palindrome;
