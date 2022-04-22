@@ -1,4 +1,4 @@
-use std::{collections::HashMap, mem, str};
+use std::collections::HashMap;
 
 /// Find a pattern in a string by comparing the pattern to every substring
 ///
