@@ -66,14 +66,22 @@ fn get_failure_array(p: &str) -> Option<Vec<usize>> {
 
 #[cfg(test)]
 mod tests {
-    use super::kmp_check;
+    use test_case::test_case;
 
-    #[test]
-    fn test_1() {
-        let pattern = "abc1abc12";
-        let text1 = "alskfjaldsabc1abc1abc12k23adsfabcabc";
-        //let text2 = "alskfjaldsk23adsfabcabc";
-        assert!(kmp_check(text1, pattern));
-        //assert!(kmp_search(text2, pattern) == false);
+    use super::*;
+
+    #[test_case("abc1abc12", "alskfjaldsabc1abc1abc12k23adsfabcabc")]
+    #[test_case("ABABX", "ABABZABABYABABX")]
+    #[test_case("AAAB", "ABAAAAAB")]
+    #[test_case("abcdabcy", "abcxabcdabxabcdabcdabcy")]
+    fn test_kmp_check(pattern: &str, text: &str) {
+        assert!(kmp_check(text, pattern));
+    }
+
+    #[test_case("aabaabaaa", &[0, 1, 0, 1, 2, 3, 4, 5, 2])]
+    fn test_get_failure_array(pattern: &str, array: &[usize]) {
+        unsafe {
+            assert_eq!(get_failure_array(pattern).unwrap_unchecked(), array);
+        }
     }
 }
