@@ -1,5 +1,5 @@
 use core::hash::Hash;
-use std::collections::HashMap;
+use hashbrown::HashMap;
 
 /// Memoization is a method used to reduce function calls in recursive functions or other functions that are called very frequently
 ///

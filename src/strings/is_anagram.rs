@@ -1,3 +1,5 @@
+use alloc::vec::Vec;
+
 /// Two strings are anagrams if they are made of the same letters
 /// arranged differently (ignoring the case).
 pub fn is_anagram(str1: &str, str2: &str) -> bool {

@@ -34,8 +34,8 @@ mod tests {
 
     #[test]
     fn wiggle_sort_test() {
-        let mut vector = vec![0, 5, 3, 2, 2];
-        let expected = vec![0, 5, 2, 3, 2];
+        let mut vector = alloc::vec![0, 5, 3, 2, 2];
+        let expected = alloc::vec![0, 5, 2, 3, 2];
         super::wiggle_sort(&mut vector);
         let actual = vector;
         assert_eq!(expected, actual);

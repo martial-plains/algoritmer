@@ -1,6 +1,8 @@
+use alloc::string::String;
+
 /// This function will capitalize the first letter of a sentence or a word
-pub fn capitalize(sentence: &String) -> String {
-    if *sentence != "".to_string() {
+pub fn capitalize(sentence: &str) -> String {
+    if *sentence != String::new() {
         let mut new_string = String::new();
         for (i, ch) in sentence.char_indices() {
             if i == 0 && sentence.starts_with(|c| c >= 'a' && c <= 'z') {
@@ -11,20 +13,23 @@ pub fn capitalize(sentence: &String) -> String {
         }
         new_string
     } else {
-        "".to_string()
+        String::new()
     }
 }
 
 #[cfg(test)]
 mod tests {
     use super::*;
+
+    use alloc::string::String;
+
     use test_case::test_case;
 
-    #[test_case("123 hello world", "123 hello world".to_string())]
-    #[test_case("hello world", "Hello world".to_string())]
-    #[test_case("a", "A".to_string())]
-    #[test_case("", "".to_string())]
-    fn does_it_capitalize(sentence: &str, expected: String) {
+    #[test_case("123 hello world", "123 hello world")]
+    #[test_case("hello world", "Hello world")]
+    #[test_case("a", "A")]
+    #[test_case("", "")]
+    fn does_it_capitalize(sentence: &str, expected: &str) {
         let actual = capitalize(&mut String::from(sentence));
         assert_eq!(expected, actual);
     }

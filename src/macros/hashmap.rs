@@ -24,7 +24,7 @@ pub macro hashmap {
 ($($key:expr => $value:expr),*) => {
     {
         let capacity = hashmap!(@count $($key),*);
-        let mut map = std::collections::HashMap::with_capacity(capacity);
+        let mut map = hashbrown::HashMap::with_capacity(capacity);
         $(
             let _ = map.insert($key, $value);
         )*

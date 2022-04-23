@@ -1,6 +1,6 @@
 use algorithms::strings::swap_case;
 
 fn main() {
-    let value = swap_case(String::from("Algorithms"));
+    let value = swap_case("Algorithms");
     println!("{}", value);
 }

@@ -1,3 +1,5 @@
+use alloc::vec::Vec;
+
 /// Searches for occurrences of a "word" w within a main "text string"
 /// s
 ///

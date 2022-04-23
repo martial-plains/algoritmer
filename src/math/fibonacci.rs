@@ -2,7 +2,7 @@
 //!
 //! [Wikipedia](https://en.wikipedia.org/wiki/Fibonacci_number)
 
-use std::collections::HashMap;
+use hashbrown::HashMap;
 
 use crate::dynamic_programming::memoize;
 

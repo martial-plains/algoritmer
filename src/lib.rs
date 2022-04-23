@@ -27,7 +27,10 @@
     while_true
 )]
 #![feature(decl_macro)]
+#![no_std]
 #![warn(clippy::all, missing_debug_implementations)]
+
+extern crate alloc;
 
 pub mod dynamic_programming;
 pub mod macros;

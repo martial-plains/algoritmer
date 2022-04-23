@@ -1,3 +1,5 @@
+use alloc::vec::Vec;
+
 /// Return the absolute maximum of a list of items.
 pub trait AbsMax {
     /// The type of the return item.
@@ -82,6 +84,8 @@ impl AbsMax for Vec<i64> {
 
 #[cfg(test)]
 mod tests {
+    use alloc::vec;
+
     use super::*;
 
     #[test]

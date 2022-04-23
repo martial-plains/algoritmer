@@ -1,4 +1,4 @@
-use std::collections::HashMap;
+use hashbrown::HashMap;
 
 /// Create a map containing count of each word
 pub fn word_occurrences(text: &str) -> HashMap<&str, u32> {
@@ -15,7 +15,6 @@ pub fn word_occurrences(text: &str) -> HashMap<&str, u32> {
 
 #[cfg(test)]
 mod tests {
-    use std::collections::HashMap;
 
     use super::*;
 

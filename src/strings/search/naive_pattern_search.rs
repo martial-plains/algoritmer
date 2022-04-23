@@ -1,6 +1,8 @@
+use alloc::vec::Vec;
+
 /// A simple and inefficient way to see where one string occurs inside another
 /// is to check each place it could be, one by one, to see if it's there.
-pub fn naive_pattern_search(s: String, pattern: &str) -> Result<Vec<i32>, &str> {
+pub fn naive_pattern_search<'a>(s: &'a str, pattern: &'a str) -> Result<Vec<i32>, &'a str> {
     Ok(s.char_indices()
         .map(|(i, x)| {
             let myv = pattern.chars().nth(0).unwrap();

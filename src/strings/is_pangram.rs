@@ -1,12 +1,19 @@
+/// A pangram or holoalphabetic sentence is a sentence using every letter of a given alphabet at least once
+///
 /// wiki: <https://en.wikipedia.org/wiki/Pangram>
 pub fn is_pangram(text: &str) -> bool {
-    let mut flags = [false; 26];
-    for ch in text.to_ascii_lowercase().chars() {
-        if ch.is_alphabetic() {
-            flags[ch as usize - 'a' as usize] = true;
-        }
-    }
-    flags.iter().all(|f| *f == true)
+    text.to_ascii_lowercase()
+        .chars()
+        .fold([false; 26], |mut init, ch| {
+            if ch.is_alphabetic() {
+                init[ch as usize - 'a' as usize] = true;
+                init
+            } else {
+                init
+            }
+        })
+        .iter()
+        .all(|f| *f == true)
 }
 
 #[cfg(test)]
