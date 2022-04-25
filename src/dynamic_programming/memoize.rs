@@ -10,7 +10,7 @@ where
     R: Clone,
     F: Fn(&mut HashMap<A, R>, A) -> R,
 {
-    match cache.get(&arg).map(|x| x.clone()) {
+    match cache.get(&arg).cloned() {
         Some(result) => result,
         None => {
             let result = func(cache, arg.clone());
