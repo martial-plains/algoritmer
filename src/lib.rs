@@ -1,5 +1,4 @@
 //! # Algorithms for Rust
-
 #![deny(
     bad_style,
     const_err,
@@ -26,9 +25,9 @@
     unused,
     while_true
 )]
+#![warn(clippy::all, missing_debug_implementations)]
 #![feature(decl_macro)]
 #![no_std]
-#![warn(clippy::all, missing_debug_implementations)]
 
 extern crate alloc;
 
