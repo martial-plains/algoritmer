@@ -13,7 +13,7 @@ pub fn is_pangram(text: &str) -> bool {
             }
         })
         .iter()
-        .all(|f| *f == true)
+        .all(|f| *f)
 }
 
 #[cfg(test)]
