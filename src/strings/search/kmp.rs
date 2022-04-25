@@ -45,8 +45,7 @@ pub fn kmp_check(s: &str, pat: &str) -> bool {
 ///
 /// Returns an array of integers (the table to be filled)
 fn get_failure_array(p: &str) -> Option<Vec<usize>> {
-    let mut t: Vec<usize> = Vec::default();
-    t.push(0);
+    let mut t: Vec<usize> = alloc::vec![0];
 
     let mut pos = 1; // The current position we are computing in `t`
     let mut cnd = 0; // The zero-based index in `w` of the next character of the current candidate substring
