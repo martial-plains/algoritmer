@@ -13,8 +13,8 @@ pub fn is_anagram(str1: &str, str2: &str) -> bool {
         .filter(|ch| *ch != ' ')
         .map(|ch| ch.to_ascii_lowercase())
         .collect();
-    a.sort();
-    b.sort();
+    a.sort_unstable();
+    b.sort_unstable();
     a == b
 }
 
