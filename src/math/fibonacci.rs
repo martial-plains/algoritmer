@@ -34,7 +34,7 @@ pub fn memoized(nth: usize) -> u128 {
         match arg {
             0 => 0,
             1 => 1,
-            n => (memoize(cache, fib_memo, n - 1) + memoize(cache, fib_memo, arg - 2)).into(),
+            n => (memoize(cache, fib_memo, n - 1) + memoize(cache, fib_memo, arg - 2)),
         }
     }
     memoize(&mut HashMap::new(), fib_memo, nth)
