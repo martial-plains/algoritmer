@@ -7,7 +7,7 @@ pub fn calculate_factorial(num: i32) -> i32 {
     if num < 0 {
         panic!("No Factorial for negative numbers");
     } else {
-        (1..=num).fold(1, |acc, n| acc * n)
+        (1..=num).product()
     }
 }
 
