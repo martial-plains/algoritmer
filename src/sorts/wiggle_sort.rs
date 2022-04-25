@@ -22,10 +22,8 @@ where
     T: Ord,
 {
     (0..nums.len()).for_each(|i| {
-        if i % 2 == 1 {
-            if nums[i - 1] > nums[i] {
-                nums.swap(i, i - 1);
-            }
+        if i % 2 == 1 && nums[i - 1] > nums[i] {
+            nums.swap(i, i - 1);
         }
     })
 }
