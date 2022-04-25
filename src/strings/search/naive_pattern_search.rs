@@ -16,13 +16,11 @@ use alloc::vec::Vec;
 /// ```rust
 /// use algorithms::strings::search::naive_pattern_search;
 ///
-/// fn main() {
-///     println!("{:?}", naive_pattern_search("ABAAABCDBBABCDDEBCABC", "ABC"));
-///     println!("{:?}", naive_pattern_search("ABC", "ABAAABCDBBABCDDEBCABC"));
-///     println!("{:?}", naive_pattern_search("", "ABC"));
-///     println!("{:?}", naive_pattern_search("TEST", "TEST"));
-///     println!("{:?}", naive_pattern_search("ABCDEGFTEST", "TEST"));
-/// }
+/// println!("{:?}", naive_pattern_search("ABAAABCDBBABCDDEBCABC", "ABC"));
+/// println!("{:?}", naive_pattern_search("ABC", "ABAAABCDBBABCDDEBCABC"));
+/// println!("{:?}", naive_pattern_search("", "ABC"));
+/// println!("{:?}", naive_pattern_search("TEST", "TEST"));
+/// println!("{:?}", naive_pattern_search("ABCDEGFTEST", "TEST"));
 /// ```
 ///
 /// # References
