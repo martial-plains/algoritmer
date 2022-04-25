@@ -65,7 +65,6 @@ pub fn jaro_winkler(str1: &str, str2: &str) -> f64 {
     let matched_chars_2 = get_matched_chars(str2, str1);
 
     let match_count = matched_chars_1.len();
-    let jaro;
 
     // Transposition
     let transpositions = f64::floor(
@@ -77,13 +76,14 @@ pub fn jaro_winkler(str1: &str, str2: &str) -> f64 {
 
     if match_count == 0 {
         return 0.;
-    } else {
+    }
+    let jaro = {
         let match_count_f = match_count as f64;
-        jaro = 1.0 / 3.0
+        1.0 / 3.0
             * (match_count_f / str1.len() as f64
                 + match_count_f / str2.len() as f64
-                + (match_count_f - transpositions as f64) / match_count_f);
-    }
+                + (match_count_f - transpositions as f64) / match_count_f)
+    };
 
     // Prefix
     let mut prefix_length = 0;
@@ -98,7 +98,7 @@ pub fn jaro_winkler(str1: &str, str2: &str) -> f64 {
             }
         }
         if bool_list.contains(&false) {
-            prefix_length = prefix_length + bool_list.iter().position(|&x| x == false).unwrap_or(0);
+            prefix_length += bool_list.iter().position(|&x| !x).unwrap_or(0);
         }
     }
 
