@@ -18,6 +18,10 @@
 /// - Average: O(n*log n)
 ///     - Average case: It occurs when the above conditions are not met.
 ///
+/// ## Space Complexity
+///
+/// 0(log n)
+///
 pub fn quicksort<T>(arr: &mut [T], left: usize, right: usize)
 where
     T: Copy + Ord,
