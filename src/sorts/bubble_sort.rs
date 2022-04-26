@@ -20,14 +20,14 @@
 ///
 /// # Performance
 ///
-///     - Worst-case performance: O(n²)
-///     - Best-case performance: O(n)
-///     - Average performance: O(n²)
-///     - Worst-case space complexity: O(1)
+/// - Worst-case performance: O(n²)
+/// - Best-case performance: O(n)
+/// - Average performance: O(n²)
+/// - Worst-case space complexity: O(1)
 ///     
 /// # See also
 ///
-/// wiki: https://en.wikipedia.org/wiki/Bubble_sort
+/// wiki: <https://en.wikipedia.org/wiki/Bubble_sort>
 pub fn bubble_sort<T>(collection: &mut [T])
 where
     T: PartialEq + PartialOrd,
