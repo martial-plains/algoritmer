@@ -10,25 +10,29 @@ use core::cmp::Ordering;
 /// empty, the target is not in the array.
 ///
 /// # Arguments
-/// 
+///
 /// * `arr` - The array being searched
 /// * `val` - The target value being searched for
-/// 
+///
 /// # Returns
-/// 
+///
 /// The index of the target value if found, or None if not found
-/// 
+///
 /// # Performance
-/// 
+///
 /// ## Time Complexity
-/// 
+///
 /// - Best: O(1)
 /// - Worst: O(log n)
 /// - Average: O(log n)
-/// 
+///
 /// ## Space Complexity
-/// 
+///
 /// O(1)
+///
+/// # See Also
+///
+/// - [Insertion Sort](https://en.wikipedia.org/wiki/Insertion_sort#Variants)
 pub fn binary_search<T>(arr: &[T], val: T) -> Option<usize>
 where
     T: Ord,
