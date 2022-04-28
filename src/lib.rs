@@ -34,5 +34,6 @@ extern crate alloc;
 pub mod dynamic_programming;
 pub mod macros;
 pub mod math;
+pub mod search;
 pub mod sorts;
 pub mod strings;
