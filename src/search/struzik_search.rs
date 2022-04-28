@@ -17,7 +17,10 @@ use core::cmp::Ordering;
 /// - O(1)
 ///
 /// - Axuiliary Space: O(1)
-pub fn struzik_search(array: &[i32], key: i32) -> Option<usize> {
+pub fn struzik_search<T>(array: &[T], key: T) -> Option<usize>
+where
+    T: Ord,
+{
     let mut left = 0;
     let mut right = array.len() - 1;
     while left <= right {
