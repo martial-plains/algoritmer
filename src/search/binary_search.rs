@@ -17,6 +17,18 @@ use core::cmp::Ordering;
 /// # Returns
 /// 
 /// The index of the target value if found, or None if not found
+/// 
+/// # Performance
+/// 
+/// ## Time Complexity
+/// 
+/// - Best: O(1)
+/// - Worst: O(log n)
+/// - Average: O(log n)
+/// 
+/// ## Space Complexity
+/// 
+/// O(1)
 pub fn binary_search<T>(arr: &[T], val: T) -> Option<usize>
 where
     T: Ord,
