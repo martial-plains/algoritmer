@@ -10,10 +10,10 @@
 ///
 /// ```
 ///
-/// use algorithms::sorts::comb_sort;
+/// use algorithms::sorts::comb;
 ///
 /// let mut data = [0, 5, 3, 2, 2];
-/// comb_sort(&mut data);
+/// comb(&mut data);
 /// println!("{:?}", data); // [0, 2, 2, 3, 5]
 ///
 /// ```

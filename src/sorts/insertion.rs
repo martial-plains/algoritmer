@@ -23,10 +23,10 @@
 /// |   21   |   22   |   23   |   24   |   25   |   26   |   27   |
 ///
 /// ```
-/// use algorithms::sorts::insertion_sort;
+/// use algorithms::sorts::insertion;
 ///
 /// let mut list = vec![25, 26, 22, 24, 27, 23, 21];
-/// insertion_sort(&mut list);
+/// insertion(&mut list);
 /// assert_eq!(list, vec![21, 22, 23, 24, 25, 26, 27]);
 /// ```
 pub fn insertion<T>(arr: &mut [T])

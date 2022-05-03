@@ -9,10 +9,10 @@
 /// # Examples
 ///
 /// ```
-/// use algorithms::sorts::wiggle_sort;
+/// use algorithms::sorts::wiggle;
 ///
 /// let mut data = [3, 5, 2, 1, 6, 4];
-/// wiggle_sort(&mut data);
+/// wiggle(&mut data);
 ///
 /// println!("{:?}", data); // [3, 5, 1, 6, 2, 4]
 ///
