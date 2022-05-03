@@ -11,7 +11,8 @@ Excerpt From [Wikipedia][binary-wiki]: In computer science, binary search, also 
     - Worst case performance O(log n)
     - Best case performance O(1)
     - Average case performance O(log n)
-    - Worst case space complexity O(1)
+  - Space Complexity
+    - Worst case complexity O(1)
 
 ## [Exponential](crate::search::exponential)
 
@@ -24,7 +25,8 @@ Excerpt From [Wikipedia][exponential-wiki]: In computer science, an exponential 
     - Worst case performance O(log n)
     - Best case performance O(1)
     - Average case performance O(log n)
-    - Worst case space complexity O(1)
+  - Space Complexity
+    - Worst case complexity O(1)
 
 ## [Jump](crate::search::jump)
 
@@ -35,7 +37,8 @@ Excerpt From [Wikipedia][jump-wiki]: In computer science, a jump search or block
     - Worst case performance O(√n)
     - Best case performance O(1)
     - Average case performance O(√n)
-    - Worst case space complexity O(1)
+  - Space Complexity
+    - Worst case complexity O(1)
 
 ## [Linear](crate::search::linear)
 
@@ -46,7 +49,8 @@ Excerpt From [Wikipedia][linear-wiki]: In computer science, a linear search or s
     - Worst case performance O(n)
     - Best case performance O(1)
     - Average case performance O(n)
-    - Worst case space complexity O(1)
+  - Space Complexity
+    - Worst case complexity O(1)
 
 ## [Ternary](crate::search::ternary)
 
@@ -57,7 +61,8 @@ Excerpt From [Wikipedia][ternary-wiki]: A ternary search algorithm is a techniqu
     - Worst case performance O(log3 n)
     - Best case performance O(log3 n)
     - Average case performance O(log3 n)
-    - Worst case space complexity O(1)
+  - Space Complexity
+    - Worst case complexity O(1)
 
 [binary-wiki]: https://en.wikipedia.org/wiki/Binary_search_algorithm
 [binary-image]: https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Binary_Search_Depiction.svg/2880px-Binary_Search_Depiction.svg.png
