@@ -26,7 +26,7 @@ use alloc::vec::Vec;
 /// If k = O(n), time complexity is O(n)
 ///
 /// Source: <https://en.wikipedia.org/wiki/Bucket_sort>
-pub fn bucket_sort<T>(arr: &mut [T])
+pub fn bucket<T>(arr: &mut [T])
 where
     T: Ord + Clone,
 {
@@ -53,7 +53,7 @@ mod tests {
     #[test]
     fn test_bucket_sort() {
         let mut arr = [1, 5, 2, 3, 4, 6, 7, 8, 9, 10];
-        bucket_sort(&mut arr);
+        bucket(&mut arr);
         assert_eq!(arr, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
     }
 }

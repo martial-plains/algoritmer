@@ -34,6 +34,7 @@ extern crate alloc;
 pub mod dynamic_programming;
 pub mod macros;
 pub mod math;
+#[doc = include_str!("search/README.md")]
 pub mod search;
 pub mod sorts;
 pub mod strings;

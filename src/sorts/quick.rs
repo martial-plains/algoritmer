@@ -20,13 +20,13 @@
 ///
 /// ## Space Complexity
 ///
-/// 0(log n)
+/// - 0(log n)
 ///
-pub fn quicksort<T: Ord>(arr: &mut [T], lo: isize, hi: isize) {
+pub fn quick<T: Ord>(arr: &mut [T], lo: isize, hi: isize) {
     if lo < hi {
         let p = partition(arr, lo, hi);
-        quicksort(arr, lo, p - 1);
-        quicksort(arr, p + 1, hi);
+        quick(arr, lo, p - 1);
+        quick(arr, p + 1, hi);
     }
 }
 
@@ -67,7 +67,7 @@ mod tests {
     #[test_case( vec![26, 17, 20, 11, 23, 21, 13, 18, 24, 14, 12, 22, 16, 16, 15, 19, 25],  vec![11, 12, 13, 14, 15, 16, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26])]
     fn test_quicksort(mut arr: Vec<isize>, expected: Vec<isize>) {
         let last_idx = arr.len() - 1;
-        quicksort(&mut arr, 0, last_idx as isize);
+        quick(&mut arr, 0, last_idx as isize);
         let actual = arr;
         assert_eq!(actual, expected);
     }

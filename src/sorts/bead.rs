@@ -8,14 +8,14 @@
 ///
 /// ```
 ///
-/// use algorithms::sorts::bead_sort;
+/// use algorithms::sorts::bead;
 ///
 /// let mut sequence = [9, 8, 7, 6, 5, 4, 3, 2, 1];
-/// bead_sort(&mut sequence);
+/// bead(&mut sequence);
 /// println!("{:?}", sequence); // [1, 2, 3, 4, 5, 6, 7, 8, 9]
 ///
 /// ```
-pub fn bead_sort<T>(sequence: &mut [T])
+pub fn bead<T>(sequence: &mut [T])
 where
     T: Ord + Copy,
 {
@@ -40,7 +40,7 @@ mod tests {
     fn bead_sort_test() {
         let mut vector = vec![9, 8, 7, 6, 5, 4, 3, 2, 1];
         let expected = vec![1, 2, 3, 4, 5, 6, 7, 8, 9];
-        bead_sort(&mut vector);
+        bead(&mut vector);
         let actual = vector;
         assert_eq!(expected, actual);
     }

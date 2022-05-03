@@ -3,13 +3,13 @@ use core::cmp::min;
 use num::integer::sqrt;
 
 /// A jump search implementation.
-/// 
+///
 /// This algorithm works best when the array is sorted.
-/// 
+///
 /// # See also
-/// 
+///
 /// - [Jump search](https://en.wikipedia.org/wiki/Jump_search)
-pub fn jump_search<T>(arr: &[T], key: &T) -> Option<usize>
+pub fn jump<T>(arr: &[T], key: &T) -> Option<usize>
 where
     T: PartialOrd + Copy,
 {
@@ -48,8 +48,8 @@ mod tests {
     #[test]
     fn test_jump_search() {
         let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-        assert_eq!(jump_search(&arr, &1), Some(0));
-        assert_eq!(jump_search(&arr, &10), Some(9));
-        assert_eq!(jump_search(&arr, &11), None);
+        assert_eq!(jump(&arr, &1), Some(0));
+        assert_eq!(jump(&arr, &10), Some(9));
+        assert_eq!(jump(&arr, &11), None);
     }
 }

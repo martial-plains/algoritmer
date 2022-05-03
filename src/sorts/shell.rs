@@ -16,7 +16,7 @@
 /// - Worst case performance: O(n²)
 /// - Average performance: O(nlog n)
 /// - Worst-case space complexity: O(1)
-pub fn shell_sort<T>(arr: &mut [T])
+pub fn shell<T>(arr: &mut [T])
 where
     T: PartialOrd + Copy,
 {
@@ -50,7 +50,7 @@ mod tests {
     #[test_case( vec![25, 26, 22, 24, 27, 23, 21],  vec![21, 22, 23, 24, 25, 26, 27])]
     #[test_case( vec![26, 17, 20, 11, 23, 21, 13, 18, 24, 14, 12, 22, 16, 16, 15, 19, 25],  vec![11, 12, 13, 14, 15, 16, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26])]
     fn test_shell_sort(mut arr: Vec<isize>, expected: Vec<isize>) {
-        shell_sort(&mut arr);
+        shell(&mut arr);
         let actual = arr;
         assert_eq!(actual, expected);
     }

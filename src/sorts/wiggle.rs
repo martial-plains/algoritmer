@@ -17,7 +17,7 @@
 /// println!("{:?}", data); // [3, 5, 1, 6, 2, 4]
 ///
 /// ```
-pub fn wiggle_sort<T>(nums: &mut [T])
+pub fn wiggle<T>(nums: &mut [T])
 where
     T: Ord,
 {
@@ -34,7 +34,7 @@ mod tests {
     fn wiggle_sort_test() {
         let mut vector = alloc::vec![0, 5, 3, 2, 2];
         let expected = alloc::vec![0, 5, 2, 3, 2];
-        super::wiggle_sort(&mut vector);
+        super::wiggle(&mut vector);
         let actual = vector;
         assert_eq!(expected, actual);
     }

@@ -10,7 +10,7 @@
 ///
 /// * `collection` - some mutable ordered collection with heterogeneous
 /// comparable items inside
-pub fn bogo_sort<T>(collection: &mut [T])
+pub fn bogo<T>(collection: &mut [T])
 where
     T: PartialEq + PartialOrd,
 {
@@ -49,7 +49,7 @@ mod tests {
     fn bogo_sort_test() {
         let mut vector = vec![0, 5, 3, 2, 2];
         let expected = vec![0, 2, 2, 3, 5];
-        bogo_sort(&mut vector);
+        bogo(&mut vector);
         let actual = vector;
         assert_eq!(expected, actual);
     }

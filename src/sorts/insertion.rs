@@ -1,6 +1,6 @@
 /// Insertion sort is a sort that in each iteration, it
 /// removes a data point from the data structure and then
-/// insiert into it's right position.
+/// inserts into it's right position.
 ///
 /// | Time | Space |
 /// |:----:|:-----:|
@@ -29,7 +29,7 @@
 /// insertion_sort(&mut list);
 /// assert_eq!(list, vec![21, 22, 23, 24, 25, 26, 27]);
 /// ```
-pub fn insertion_sort<T>(arr: &mut [T])
+pub fn insertion<T>(arr: &mut [T])
 where
     T: PartialOrd + Copy,
 {
@@ -53,7 +53,7 @@ where
 ///
 /// * `arr` - The array to sort.
 /// * `pivot` - The pivot to sort until.
-pub fn insertion_sort_until<T>(arr: &mut [T], pivot: usize)
+pub fn insertion_until<T>(arr: &mut [T], pivot: usize)
 where
     T: PartialOrd + Copy,
 {
@@ -82,14 +82,14 @@ mod tests {
 
     #[test_case(vec![25, 26, 22, 24, 27, 23, 21], vec![21, 22, 23, 24, 25, 26, 27 ] ; "insertion sort")]
     fn test_insertion_sort(mut actual: Vec<isize>, expected: Vec<isize>) {
-        insertion_sort(&mut actual);
+        insertion(&mut actual);
         assert_eq!(actual, expected);
     }
 
     #[test_case(vec![25, 26, 22, 24, 27, 23, 21], vec![21, 22, 23, 24, 25, 26, 27 ] ; "insertion sort until")]
     fn test_insertion_sort_until(mut actual: Vec<isize>, expected: Vec<isize>) {
         let pivot = actual.len();
-        insertion_sort_until(&mut actual, pivot);
+        insertion_until(&mut actual, pivot);
         assert_eq!(actual, expected);
     }
 }

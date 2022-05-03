@@ -28,7 +28,7 @@
 /// # See Also
 ///
 /// wiki: <https://en.wikipedia.org/wiki/Selection_sort>
-pub fn selection_sort<T>(array: &mut [T])
+pub fn selection<T>(array: &mut [T])
 where
     T: Ord,
 {
@@ -55,7 +55,7 @@ mod tests {
     #[test]
     fn test_selection_sort() {
         let mut array = [3, 2, 1];
-        selection_sort(&mut array);
+        selection(&mut array);
         assert_eq!(array, [1, 2, 3]);
     }
 }

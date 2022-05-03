@@ -17,7 +17,7 @@
 /// println!("{:?}", data); // [0, 2, 2, 3, 5]
 ///
 /// ```
-pub fn comb_sort<T>(data: &mut [T])
+pub fn comb<T>(data: &mut [T])
 where
     T: Ord,
 {
@@ -73,7 +73,7 @@ mod tests {
     fn comb_sort_test() {
         let mut vector = vec![99, 45, -7, 8, 2, 0, -15, 3];
         let expected = vec![-15, -7, 0, 2, 3, 8, 45, 99];
-        comb_sort(&mut vector);
+        comb(&mut vector);
         let actual = vector;
         assert_eq!(expected, actual);
     }

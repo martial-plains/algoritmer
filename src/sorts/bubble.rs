@@ -1,4 +1,4 @@
-/// Bubble sort is the simplest and slowest algorithm used for 
+/// Bubble sort is the simplest and slowest algorithm used for
 /// sorting. It is based on various iterations, called **passes**.
 ///
 /// As its worst-case performance is O(n²), it should be used for smaller datasets.
@@ -11,11 +11,11 @@
 ///
 /// # Explanation
 ///
-/// When the first pass is done, the largest element is in the 
-/// last position. When the second pass is done, the 
-/// second-largest element will be located at the second 
-/// highest position of the `collection` and so on. This is 
-/// done by comparing the adjacent elements, and swapping them 
+/// When the first pass is done, the largest element is in the
+/// last position. When the second pass is done, the
+/// second-largest element will be located at the second
+/// highest position of the `collection` and so on. This is
+/// done by comparing the adjacent elements, and swapping them
 /// if they are in the wrong order.
 ///
 /// # Performance
@@ -28,7 +28,7 @@
 /// # See also
 ///
 /// wiki: <https://en.wikipedia.org/wiki/Bubble_sort>
-pub fn bubble_sort<T>(collection: &mut [T])
+pub fn bubble<T>(collection: &mut [T])
 where
     T: PartialEq + PartialOrd,
 {
@@ -71,7 +71,7 @@ mod tests {
     #[test_case(vec![-23, 0, 6, -4, 34],vec![-23, -4, 0, 6, 34])]
     #[test_case(vec![25, 21, 22, 24, 23, 27, 26],vec![21, 22, 23, 24, 25, 26, 27])]
     fn bubble_sort_test(mut input: Vec<isize>, expected: Vec<isize>) {
-        bubble_sort(&mut input);
+        bubble(&mut input);
         let actual = input;
         assert_eq!(expected, actual);
     }
