@@ -25,7 +25,7 @@ use alloc::vec::Vec;
 ///
 /// If k = O(n), time complexity is O(n)
 ///
-/// Source: https://en.wikipedia.org/wiki/Bucket_sort
+/// Source: <https://en.wikipedia.org/wiki/Bucket_sort>
 pub fn bucket_sort<T>(arr: &mut [T])
 where
     T: Ord + Clone,
