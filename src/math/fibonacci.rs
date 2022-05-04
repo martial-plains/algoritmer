@@ -48,7 +48,7 @@ pub fn memoized(nth: usize) -> usize {
 
 /// Calculate the nth Fibonacci number using Binet's formula.
 pub fn analytic(nth: usize) -> usize {
-    let sqrt_5 = 5f64.sqrt();
+    let sqrt_5 = f64::sqrt(5.0);
     let phi = (1. + sqrt_5) / 2.;
     let q = 1. / phi;
     ((phi.powf(nth as f64) + q.powf(nth as f64)) / sqrt_5 + 0.5) as usize
