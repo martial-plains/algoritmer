@@ -7,16 +7,16 @@ use hashbrown::HashMap;
 use crate::dynamic_programming::memoize;
 
 /// Calculate the nth Fibonacci number recursively.
-pub fn recursive(nth: usize) -> u128 {
+pub fn recursive(nth: usize) -> usize {
     if nth <= 1 {
-        nth as u128
+        nth
     } else {
         recursive(nth - 1) + recursive(nth - 2)
     }
 }
 
 /// Calculate the nth Fibonacci number imperatively.
-pub fn iterative(nth: usize) -> u128 {
+pub fn iterative(nth: usize) -> usize {
     match nth {
         0 => 0,
         1 => 1,
@@ -35,8 +35,8 @@ pub fn iterative(nth: usize) -> u128 {
 }
 
 /// Calculate the nth Fibonacci number using dynamic_programming and memoization.
-pub fn memoized(nth: usize) -> u128 {
-    fn fib_memo(cache: &mut HashMap<usize, u128>, arg: usize) -> u128 {
+pub fn memoized(nth: usize) -> usize {
+    fn fib_memo(cache: &mut HashMap<usize, usize>, arg: usize) -> usize {
         match arg {
             0 => 0,
             1 => 1,
@@ -47,11 +47,11 @@ pub fn memoized(nth: usize) -> u128 {
 }
 
 /// Calculate the nth Fibonacci number using Binet's formula.
-pub fn analytic(nth: usize) -> u128 {
+pub fn analytic(nth: usize) -> usize {
     let sqrt_5 = 5f64.sqrt();
     let phi = (1. + sqrt_5) / 2.;
     let q = 1. / phi;
-    ((phi.powf(nth as f64) + q.powf(nth as f64)) / sqrt_5 + 0.5) as u128
+    ((phi.powf(nth as f64) + q.powf(nth as f64)) / sqrt_5 + 0.5) as usize
 }
 
 #[cfg(test)]
