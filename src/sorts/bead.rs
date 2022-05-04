@@ -1,5 +1,4 @@
 /// Bead sort only works for sequences of non-negative integers.
-/// <https://en.wikipedia.org/wiki/Bead_sort>
 /// # Arguments
 ///
 /// * `sequence` - The array being sorted
@@ -15,6 +14,10 @@
 /// println!("{:?}", sequence); // [1, 2, 3, 4, 5, 6, 7, 8, 9]
 ///
 /// ```
+///
+/// # References
+///
+/// - [Wikipedia](https://en.wikipedia.org/wiki/Bead_sort)
 pub fn bead<T>(sequence: &mut [T])
 where
     T: Ord + Copy,

@@ -17,6 +17,10 @@
 /// println!("{:?}", data); // [0, 2, 2, 3, 5]
 ///
 /// ```
+///
+/// # References
+///
+/// - [Wikipedia](https://en.wikipedia.org/wiki/Comb_sort)
 pub fn comb<T>(data: &mut [T])
 where
     T: Ord,

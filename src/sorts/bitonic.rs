@@ -1,4 +1,4 @@
-fn comp_and_swap<T>(arr: &mut [T], left: usize, right: usize, dir: i32)
+fn comp_and_swap<T>(arr: &mut [T], left: usize, right: usize, dir: usize)
 where
     T: PartialOrd,
 {
@@ -14,11 +14,7 @@ where
     }
 }
 
-/// It recursively sorts a bitonic sequence in ascending order, if direction = 1, and in
-/// descending if direction = 0.
-/// The sequence to be sorted starts at index position low, the parameter length is the
-/// number of elements to be sorted.
-fn merge<T>(arr: &mut [T], low: usize, length: usize, dir: i32)
+fn merge<T>(arr: &mut [T], low: usize, length: usize, dir: usize)
 where
     T: PartialOrd,
 {
@@ -37,17 +33,28 @@ where
 ///
 /// Note that this program works only when size of input is a power of 2.
 /// This function first produces a bitonic sequence by recursively
-/// sorting its two halves in opposite sorting orders, and then calls 
+/// sorting its two halves in opposite sorting orders, and then calls
 /// merge to make them in the same order.
-pub fn bitonic<T>(arr: &mut [T], low: usize, length: usize, dir: i32)
+///
+/// # Arguments
+///
+/// * `arr` - The array to be sorted
+/// * `low` - The starting index of the array
+/// * `high` - The ending index of the array
+/// * `dir` - The direction of sorting (1 for ascending, 0 for descending)
+///
+/// # References
+///
+/// - [Wikipedia](https://en.wikipedia.org/wiki/Bitonic_sorter)
+pub fn bitonic<T>(arr: &mut [T], low: usize, high: usize, dir: usize)
 where
     T: PartialOrd,
 {
-    if length > 1 {
-        let middle = length / 2;
+    if high > 1 {
+        let middle = high / 2;
         bitonic(arr, low, middle, 1);
         bitonic(arr, low + middle, middle, 0);
-        merge(arr, low, length, dir);
+        merge(arr, low, high, dir);
     }
 }
 

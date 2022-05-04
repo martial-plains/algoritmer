@@ -1,7 +1,14 @@
 use alloc::vec::Vec;
 
 /// A Rust bucket sort implementation
-/// Wikipedia: <https://en.wikipedia.org/wiki/Bucket_sort>
+///
+/// # Arguments
+///
+/// * `arr` - some mutable ordered collection with heterogeneous comparable items inside
+///
+/// # References
+///
+/// - [Wikipedia](https://en.wikipedia.org/wiki/Bucket_sort)
 pub fn bucket<T>(arr: &mut [T])
 where
     T: Ord + Clone,

@@ -3,6 +3,15 @@ use core::cmp::Ordering;
 /// Exponential Search Algorithm (Struzik)
 ///
 /// The algorithm is described by Struzik, J. (1983).
+/// 
+/// # Arguments
+/// 
+/// * `arr` - The array being searched
+/// * `key` - The target value being searched for
+/// 
+/// # Returns
+/// 
+/// The index of the target value if found, or None if not found
 ///
 /// # Performance
 ///
@@ -17,7 +26,11 @@ use core::cmp::Ordering;
 /// - O(1)
 ///
 /// - Auxiliary Space: O(1)
-#[doc(alias("struzik", "struzik_search"))]
+/// 
+/// # References
+/// 
+/// - [Wikipedia](https://en.wikipedia.org/wiki/Exponential_search)
+#[doc(alias("struzik"))]
 pub fn exponential<T>(array: &[T], key: T) -> Option<usize>
 where
     T: Ord,

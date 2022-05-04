@@ -4,7 +4,7 @@
 ///
 /// # Arguments
 ///
-/// * `array` - The array to sort.
+/// * `arr` - The array to sort.
 ///
 /// # Performance
 ///
@@ -25,26 +25,26 @@
 ///
 /// No
 ///
-/// # See Also
+/// # References
 ///
-/// wiki: <https://en.wikipedia.org/wiki/Selection_sort>
-pub fn selection<T>(array: &mut [T])
+/// - [Wikipedia](https://en.wikipedia.org/wiki/Selection_sort)
+pub fn selection<T>(arr: &mut [T])
 where
     T: Ord,
 {
-    for i in 0..array.len() {
+    for i in 0..arr.len() {
         let mut min_idx = i;
         // For `j` from `i` to the end of the array, find the smallest
         // element in the array. Where `j` is the index of the first
         // unsorted element.
-        for j in i..array.len() {
+        for j in i..arr.len() {
             // Compare the current element with the min element.
-            if array[j] < array[min_idx] {
+            if arr[j] < arr[min_idx] {
                 min_idx = j;
             }
         }
         // Swap the current element with the min element.
-        array.swap(i, min_idx);
+        arr.swap(i, min_idx);
     }
 }
 

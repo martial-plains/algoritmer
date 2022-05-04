@@ -32,5 +32,5 @@ fn exponential_search_bench(b: &mut Bencher) {
 #[bench]
 fn ternary_search_bench(b: &mut Bencher) {
     let arr = [1, 3, 5, 7, 9, 11, 13, 15, 2, 4, 6, 8, 10, 12, 14, 16];
-    b.iter(|| ternary_search(&9, &arr).unwrap());
+    b.iter(|| ternary_search(&arr, &9).unwrap());
 }

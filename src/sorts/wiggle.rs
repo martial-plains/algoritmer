@@ -5,7 +5,7 @@
 ///
 /// #Arguments
 ///
-/// * `data` - The array being sorted
+/// * `arr` - The array being sorted
 /// # Examples
 ///
 /// ```
@@ -17,13 +17,17 @@
 /// println!("{:?}", data); // [3, 5, 1, 6, 2, 4]
 ///
 /// ```
-pub fn wiggle<T>(nums: &mut [T])
+/// 
+/// # References
+/// 
+/// - [Wikipedia](https://en.wikipedia.org/wiki/Wiggle_sort)
+pub fn wiggle<T>(arr: &mut [T])
 where
     T: Ord,
 {
-    (0..nums.len()).for_each(|i| {
-        if i % 2 == 1 && nums[i - 1] > nums[i] {
-            nums.swap(i, i - 1);
+    (0..arr.len()).for_each(|i| {
+        if i % 2 == 1 && arr[i - 1] > arr[i] {
+            arr.swap(i, i - 1);
         }
     })
 }

@@ -6,9 +6,18 @@ use num::integer::sqrt;
 ///
 /// This algorithm works best when the array is sorted.
 ///
-/// # See also
+/// # Arguments
 ///
-/// - [Jump search](https://en.wikipedia.org/wiki/Jump_search)
+/// * `arr` - The array being searched
+/// * `key` - The target value being searched for
+///
+/// # Returns
+///
+/// The index of the target value if found, or None if not found
+///
+/// # References
+///
+/// - [Wikipedia](https://en.wikipedia.org/wiki/Jump_search)
 pub fn jump<T>(arr: &[T], key: &T) -> Option<usize>
 where
     T: PartialOrd + Copy,

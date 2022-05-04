@@ -1,6 +1,12 @@
 /// A Cocktail shaker sort implementation.
 ///
-/// [Cocktail shaker sort](https://en.wikipedia.org/wiki/Cocktail_shaker_sort)
+/// # Arguments
+///
+/// * `arr` - some mutable ordered collection with heterogeneous comparable items inside
+///
+/// # References
+///
+/// - [Wikipedia](https://en.wikipedia.org/wiki/Cocktail_shaker_sort)
 pub fn cocktail_shaker<T>(arr: &mut [T])
 where
     T: Ord + Copy,

@@ -4,20 +4,31 @@ const ALPHABET_SIZE: isize = 256;
 // Modulus to hash a string
 const MODULUS: isize = 1000003;
 
-///    The Rabin-Karp Algorithm for finding a pattern within a piece of text
-///    with complexity O(nm), most efficient when it is used with multiple patterns
-///    as it is able to check if any of a set of patterns match a section of text in o(1)
-///    given the precomputed hashes.
+/// The Rabin-Karp Algorithm for finding a pattern within a piece of text
+/// with complexity O(nm), most efficient when it is used with multiple patterns
+/// as it is able to check if any of a set of patterns match a section of text in o(1)
+/// given the precomputed hashes.
 ///
-///    This will be the simple version which only assumes one pattern is being searched
-///    for but it's not hard to modify
+/// This will be the simple version which only assumes one pattern is being searched
+/// for but it's not hard to modify
 ///
-///    1) Calculate pattern hash
+/// 1) Calculate pattern hash
 ///
-///    2) Step through the text one character at a time passing a window with the same
-///        length as the pattern
-///        calculating the hash of the text within the window compare it with the hash
-///        of the pattern. Only testing equality if the hashes match
+/// 2) Step through the text one character at a time passing a window with the same
+///     length as the pattern
+///     calculating the hash of the text within the window compare it with the hash
+///     of the pattern. Only testing equality if the hashes match
+/// 
+/// 3) If the hashes match then check if the text is equal to the pattern
+/// 
+/// # Arguments
+/// 
+/// * `text` - The text to be searched
+/// * `pattern` - The word sought
+/// 
+/// # Returns
+/// 
+/// Returns true if the pattern is found in the text else false
 pub fn rabin_karp_check(text: &str, pattern: &str) -> bool {
     let p_len = pattern.len();
     let t_len = text.len();

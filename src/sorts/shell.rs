@@ -2,7 +2,7 @@
 ///
 /// # Arguments
 ///
-/// * `collection` - Some mutable ordered collection with heterogeneous comparable items inside
+/// * `arr` - Some mutable ordered collection with heterogeneous comparable items inside
 ///
 /// # Explanation
 ///
@@ -11,11 +11,17 @@
 /// The gap sequence is defined as follows:
 ///
 /// # Performance
+/// 
+/// ## Time complexity
 ///
 /// - Best-case performance: O(nlog n)
 /// - Worst case performance: O(n²)
 /// - Average performance: O(nlog n)
 /// - Worst-case space complexity: O(1)
+/// 
+/// # References
+/// 
+/// - [Wikipedia](https://en.wikipedia.org/wiki/Shellsort)
 pub fn shell<T>(arr: &mut [T])
 where
     T: PartialOrd + Copy,

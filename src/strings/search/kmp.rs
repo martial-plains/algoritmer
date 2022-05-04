@@ -5,22 +5,22 @@ use alloc::vec::Vec;
 /// The Knuth-Morris-Pratt Algorithm for finding a pattern within a piece of text
 /// with complexity O(n + m)
 ///
-/// # Wikipedia
-///
-/// <https://en.wikipedia.org/wiki/Knuth–Morris–Pratt_algorithm>
-///
 /// # Arguments
 ///
-/// * `s` - The text to be searched
-/// * `w` - The word sought
-pub fn kmp_check(s: &str, pat: &str) -> bool {
+/// * `text` - The text to be searched
+/// * `pattern` - The word sought
+///
+/// # References
+///
+/// [Knuth-Morris-Pratt Algorithm](https://en.wikipedia.org/wiki/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm)
+pub fn kmp_check(text: &str, pattern: &str) -> bool {
     let mut i = 0; // The position of the current character in `s`
     let mut j = 0; // The position of the current character in `pat`
-    let failure = get_failure_array(pat).unwrap();
+    let failure = get_failure_array(pattern).unwrap();
 
-    while i < s.len() {
-        if pat.chars().nth(j).unwrap() == s.chars().nth(i).unwrap() {
-            if j == pat.len() - 1 {
+    while i < text.len() {
+        if pattern.chars().nth(j).unwrap() == text.chars().nth(i).unwrap() {
+            if j == pattern.len() - 1 {
                 return true;
             }
             j += 1;
@@ -43,7 +43,7 @@ pub fn kmp_check(s: &str, pat: &str) -> bool {
 ///
 /// # Returns
 ///
-/// Returns an array of integers (the table to be filled)
+/// Returns an array of integers (the table to be filled) or `None`
 fn get_failure_array(p: &str) -> Option<Vec<usize>> {
     let mut t: Vec<usize> = alloc::vec![0];
 

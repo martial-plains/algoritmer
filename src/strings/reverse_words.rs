@@ -27,6 +27,10 @@ pub fn reverse_word_order(sentence: &str) -> String {
 ///
 /// * `sentence` - The sentence to be reversed.
 /// * `n` - The minimum length of a word before it can be reversed.
+/// 
+/// # Returns
+/// 
+/// Returns the sentence with all words that are longer than `n` characters reversed.
 ///
 /// # Example
 ///

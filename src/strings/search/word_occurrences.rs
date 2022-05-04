@@ -1,6 +1,14 @@
 use hashbrown::HashMap;
 
 /// Create a map containing count of each word
+///
+/// # Arguments
+///
+/// * `text` - The text to be analyzed
+///
+/// # Returns
+///
+/// Returns a map containing count of each word
 pub fn word_occurrences(text: &str) -> HashMap<&str, u32> {
     let mut occurrence: HashMap<&str, u32> = HashMap::new();
     for word in text.split_ascii_whitespace() {

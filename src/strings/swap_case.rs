@@ -1,6 +1,14 @@
 use alloc::string::String;
 
 /// This function will convert all lowercase letters to uppercase letters and vice versa
+/// 
+/// # Arguments
+/// 
+/// * `text` - The text to be processed
+/// 
+/// # Returns
+/// 
+/// Returns the text with all lowercase letters converted to uppercase letters and vice versa
 pub fn swap_case(text: &str) -> String {
     text.chars()
         .map(|c| {

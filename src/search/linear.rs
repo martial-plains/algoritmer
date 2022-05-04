@@ -1,8 +1,17 @@
 /// A Rust implementation of a binary search algorithm.
 ///
-/// # See also
+/// # Arguments
 ///
-/// - [Linear search](https://en.wikipedia.org/wiki/Linear_search)
+/// * `arr` - The array being searched
+/// * `key` - The target value being searched for
+///
+/// # Returns
+///
+/// The index of the target value if found, or None if not found
+///
+/// # References
+///
+/// - [Wikipedia](https://en.wikipedia.org/wiki/Linear_search)
 pub fn linear<T>(arr: &[T], key: T) -> Option<usize>
 where
     T: PartialOrd + Copy,

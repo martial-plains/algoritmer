@@ -22,6 +22,9 @@
 ///
 /// - 0(log n)
 ///
+/// # References
+///
+/// - [Wikipedia](https://en.wikipedia.org/wiki/Quicksort)
 pub fn quick<T: Ord>(arr: &mut [T], lo: isize, hi: isize) {
     if lo < hi {
         let p = partition(arr, lo, hi);

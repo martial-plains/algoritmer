@@ -10,8 +10,6 @@ use alloc::{
 /// sequences.
 /// Output value is between 0.0 and 1.0.
 ///
-/// wiki : <https://en.wikipedia.org/wiki/Jaro%E2%80%93Winkler_distance>
-///
 /// # Arguments
 ///
 /// * `str1` - first string
@@ -32,6 +30,10 @@ use alloc::{
 /// println!("{}", jaro_winkler("hell**o", "*world"));
 ///
 /// ```
+/// 
+/// # References
+/// 
+/// [Jaro–Winkler Algorithm](https://en.wikipedia.org/wiki/Jaro%E2%80%93Winkler_distance)
 pub fn jaro_winkler(str1: &str, str2: &str) -> f64 {
     let get_matched_chars = |_str1: &str, _str2: &str| -> String {
         let istr1 = _str1;

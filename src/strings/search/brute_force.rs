@@ -28,7 +28,7 @@ pub fn brute_force(text: &str, pattern: &str) -> Option<usize> {
 #[cfg(test)]
 mod tests {
     use super::*;
-    
+
     #[test]
     fn brute_force_which_works() {
         let test_set = [

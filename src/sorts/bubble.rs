@@ -7,7 +7,7 @@
 ///
 /// # Arguments
 ///
-/// * `collection` - some mutable ordered collection with heterogeneous comparable items inside
+/// * `arr` - some mutable ordered collection with heterogeneous comparable items inside
 ///
 /// # Explanation
 ///
@@ -25,10 +25,10 @@
 /// - Average performance: O(n²)
 /// - Worst-case space complexity: O(1)
 ///     
-/// # See also
+/// # References
 ///
-/// wiki: <https://en.wikipedia.org/wiki/Bubble_sort>
-pub fn bubble<T>(collection: &mut [T])
+/// - [Wikipedia](https://en.wikipedia.org/wiki/Bubble_sort)
+pub fn bubble<T>(arr: &mut [T])
 where
     T: PartialEq + PartialOrd,
 {
@@ -42,14 +42,14 @@ where
     while swapped {
         swapped = false;
 
-        // This is where the list will be sorted until the higest element is pushed to the end
+        // This is where the list will be sorted until the highest element is pushed to the end
         // of the list. The first pass will have an N - 1 length, the second pass will have an N - 2, etc.
-        // Each successive pass will have a length of N - 1 - i reducing the number of comparisions by 1
-        for j in 0..collection.len() - i - 1 {
+        // Each successive pass will have a length of N - 1 - i reducing the number of comparisons by 1
+        for j in 0..arr.len() - i - 1 {
             // Compare adjacent neighbor elements.
             // If they are in wrong order, swap them.
-            if collection[j] > collection[j + 1] {
-                collection.swap(j, j + 1);
+            if arr[j] > arr[j + 1] {
+                arr.swap(j, j + 1);
                 swapped = true;
             }
         }

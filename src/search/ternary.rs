@@ -4,11 +4,17 @@ use core::cmp::Ordering;
 ///
 /// # Arguments
 ///
-/// * `target` - value to search for
 /// * `arr` - array to search in
-/// * `start` - index to start searching from
-/// * `end` - index to end searching at
-pub fn ternary_search<T>(target: &T, arr: &[T]) -> Option<usize>
+/// * `key` - value to search for
+///
+/// # Returns
+///
+/// The index of the target value if found, or None if not found
+///
+/// # References
+///
+/// - [Wikipedia](https://en.wikipedia.org/wiki/Ternary_search)
+pub fn ternary_search<T>(arr: &[T], key: &T) -> Option<usize>
 where
     T: Ord,
 {
@@ -22,10 +28,10 @@ where
         let mid1: usize = left + (right - left) / 3;
         let mid2: usize = right - (right - left) / 3;
 
-        match target.cmp(&arr[mid1]) {
+        match key.cmp(&arr[mid1]) {
             Ordering::Less => right = mid1 - 1,
             Ordering::Equal => return Some(mid1),
-            Ordering::Greater => match target.cmp(&arr[mid2]) {
+            Ordering::Greater => match key.cmp(&arr[mid2]) {
                 Ordering::Greater => left = mid2 + 1,
                 Ordering::Equal => return Some(mid2),
                 Ordering::Less => {
@@ -46,8 +52,8 @@ mod tests {
     #[test]
     fn test_ternary_search() {
         let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-        assert_eq!(ternary_search(&1, &arr), Some(0));
-        assert_eq!(ternary_search(&10, &arr), Some(9));
-        assert_eq!(ternary_search(&11, &arr), None);
+        assert_eq!(ternary_search(&arr, &1), Some(0));
+        assert_eq!(ternary_search(&arr, &10), Some(9));
+        assert_eq!(ternary_search(&arr, &11), None);
     }
 }

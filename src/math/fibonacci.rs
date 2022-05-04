@@ -7,6 +7,10 @@ use hashbrown::HashMap;
 use crate::dynamic_programming::memoize;
 
 /// Calculate the nth Fibonacci number recursively.
+/// 
+/// # Arguments
+/// 
+/// * `nth` - The nth Fibonacci number to calculate.
 pub fn recursive(nth: usize) -> usize {
     if nth <= 1 {
         nth
@@ -16,6 +20,10 @@ pub fn recursive(nth: usize) -> usize {
 }
 
 /// Calculate the nth Fibonacci number imperatively.
+///
+/// # Arguments
+///
+/// * `nth` - The nth Fibonacci number to calculate.
 pub fn iterative(nth: usize) -> usize {
     match nth {
         0 => 0,
@@ -35,6 +43,10 @@ pub fn iterative(nth: usize) -> usize {
 }
 
 /// Calculate the nth Fibonacci number using dynamic_programming and memoization.
+///
+/// # Arguments
+///
+/// * `nth` - The nth Fibonacci number to calculate.
 pub fn memoized(nth: usize) -> usize {
     fn fib_memo(cache: &mut HashMap<usize, usize>, arg: usize) -> usize {
         match arg {
@@ -47,6 +59,13 @@ pub fn memoized(nth: usize) -> usize {
 }
 
 /// Calculate the nth Fibonacci number using Binet's formula.
+///
+/// # Arguments
+///
+/// * `nth` - The nth Fibonacci number to calculate.
+/// 
+/// # Note
+/// This is sufficient to calculate the first 70 Fibonacci numbers.
 pub fn analytic(nth: usize) -> usize {
     let sqrt_5 = f64::sqrt(5.0);
     let phi = (1. + sqrt_5) / 2.;

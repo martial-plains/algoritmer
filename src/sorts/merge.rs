@@ -40,6 +40,10 @@ fn temp_merge<T: Ord + Copy>(arr: &mut [T], mid: usize) {
 /// # Stability
 ///
 /// Stable
+///
+/// # References
+///
+/// - [Wikipedia](https://en.wikipedia.org/wiki/Merge_sort)
 pub fn merge<T>(arr: &mut [T])
 where
     T: Ord + Copy,

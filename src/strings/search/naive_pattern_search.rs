@@ -25,7 +25,7 @@ use alloc::vec::Vec;
 ///
 /// # References
 ///
-/// wiki: <https://en.wikipedia.org/wiki/String-searching_algorithm#Na%C3%AFve_string_search>
+/// [Naive Pattern Search](https://en.wikipedia.org/wiki/Naive_pattern_search)
 pub fn naive_pattern_search<'a>(s: &'a str, pattern: &'a str) -> Vec<usize> {
     let pat_len = pattern.len();
     let mut positions = Vec::new();

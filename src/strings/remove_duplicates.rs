@@ -1,6 +1,14 @@
 use alloc::{string::String, vec::Vec};
 
 /// Remove duplicates from sentence
+/// 
+/// # Arguments
+/// 
+/// * `text` - The text to be processed
+/// 
+/// # Returns
+/// 
+/// Returns the text without duplicates
 pub fn remove_duplicates(text: &str) -> String {
     text.split_whitespace()
         .into_iter()

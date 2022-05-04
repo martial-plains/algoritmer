@@ -1,5 +1,19 @@
 use crate::math::fibonacci::iterative as fibs;
-/// A Rust implementation of the [Fibonacci search algorithm](https://en.wikipedia.org/wiki/Fibonacci_search).
+
+/// A Rust implementation of the Fibonacci search algorithm.
+/// 
+/// # Arguments
+/// 
+/// * `arr` - The array being searched
+/// * `key` - The target value being searched for
+/// 
+/// # Returns
+/// 
+/// The index of the target value if found, or None if not found
+/// 
+/// # References
+/// 
+/// - [Wikipedia](https://en.wikipedia.org/wiki/Fibonacci_search)
 pub fn fibonacci<T>(arr: &[T], key: T) -> Option<usize>
 where
     T: Ord,

@@ -2,13 +2,21 @@
 /// removes a data point from the data structure and then
 /// inserts into it's right position.
 ///
-/// | Time | Space |
-/// |:----:|:-----:|
-/// | O(n^2) | O(1) |
-///
 /// # Arguments
 ///
 /// * `arr` - The array to be sorted.
+///
+/// # Performance
+///
+/// ## Time Complexity
+///
+/// - Best Case: O(n)
+/// - Worst Case: O(n²)
+/// - Average Case: O(n²)
+///
+/// ## Space Complexity
+///
+/// - O(1)
 ///
 /// # Examples
 ///
@@ -29,6 +37,10 @@
 /// insertion(&mut list);
 /// assert_eq!(list, vec![21, 22, 23, 24, 25, 26, 27]);
 /// ```
+///
+/// # References
+///
+/// - [Wikipedia](https://en.wikipedia.org/wiki/Insertion_sort)
 pub fn insertion<T>(arr: &mut [T])
 where
     T: PartialOrd + Copy,

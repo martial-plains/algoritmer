@@ -4,13 +4,14 @@
 /// This is a highly inefficient sorting algorithm so it is not
 /// useful for sorting but may be good for educational purposes
 ///
-/// <https://en.wikipedia.org/wiki/Bogosort>
-///
 /// # Arguments
 ///
-/// * `collection` - some mutable ordered collection with heterogeneous
-/// comparable items inside
-pub fn bogo<T>(collection: &mut [T])
+/// * `arr` - some mutable ordered collection with heterogeneous comparable items inside
+///
+/// # References
+///
+/// - [Wikipedia](https://en.wikipedia.org/wiki/Bogosort)
+pub fn bogo<T>(arr: &mut [T])
 where
     T: PartialEq + PartialOrd,
 {
@@ -34,8 +35,8 @@ where
         true
     }
 
-    while !is_sorted(collection) {
-        collection.shuffle(&mut rng);
+    while !is_sorted(arr) {
+        arr.shuffle(&mut rng);
     }
 }
 

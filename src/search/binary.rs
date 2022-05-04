@@ -12,7 +12,7 @@ use core::cmp::Ordering;
 /// # Arguments
 ///
 /// * `arr` - The array being searched
-/// * `val` - The target value being searched for
+/// * `key` - The target value being searched for
 ///
 /// # Returns
 ///
@@ -30,10 +30,10 @@ use core::cmp::Ordering;
 ///
 /// O(1)
 ///
-/// # See Also
+/// # References
 ///
-/// - [Insertion Sort](https://en.wikipedia.org/wiki/Insertion_sort#Variants)
-pub fn binary<T>(arr: &[T], val: T) -> Option<usize>
+/// - [Wikipedia](https://en.wikipedia.org/wiki/Insertion_sort#Variants)
+pub fn binary<T>(arr: &[T], key: T) -> Option<usize>
 where
     T: Ord,
 {
@@ -43,7 +43,7 @@ where
     while lo < hi + 1 {
         let m = lo + (hi - lo) / 2; // set the middle point of the array.
 
-        match val.cmp(&arr[m]) {
+        match key.cmp(&arr[m]) {
             Ordering::Less => hi = m - 1,
             Ordering::Greater => lo = m + 1,
             Ordering::Equal => return Some(m),
