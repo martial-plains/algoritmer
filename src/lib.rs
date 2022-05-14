@@ -36,5 +36,6 @@ pub mod macros;
 pub mod math;
 #[doc = include_str!("search/README.md")]
 pub mod search;
+#[doc = include_str!("sorts/README.md")]
 pub mod sorts;
 pub mod strings;
