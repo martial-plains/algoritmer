@@ -171,6 +171,28 @@ Excerpt From [Wikipedia][gnome-wiki]: **Gnome sort** (nicknamed **stupid sort**)
 [gnome-wiki]: https://en.wikipedia.org/wiki/Gnome_sort
 [gnome-image]: https://upload.wikimedia.org/wikipedia/commons/8/89/Visualization_of_Gnome_sort.gif
 
+## [Heap](crate::sorts::heap)
+
+Excerpt From [Wikipedia][heap-wiki]: **Gnome sort** (nicknamed **stupid sort**) is a variation of the insertion sort sorting algorithm that does not use nested loops. Gnome sort was originally proposed by Iranian computer scientist Hamid Sarbazi-Azad (professor of Computer Science and Engineering at Sharif University of Technology) in 2000. The sort was first called stupid sort (not to be confused with bogosort), and then later described by Dick Grune and named gnome sort.
+
+![alt text][heap-image]
+
+- Performance
+  - Time Complexity
+    - Worst case performance: O(n log n)
+    - Best case performance:
+      - Distinct keys: O(n log n)
+      - Equal keys: O(n)
+    - Average case performance: O(n log n)
+  - Space Complexity
+    - Worst case complexity:
+      - Total: O(n)
+      - Auxiliary: O(1)
+
+[heap-wiki]: https://en.wikipedia.org/wiki/Heapsort
+[heap-image]: https://upload.wikimedia.org/wikipedia/commons/1/1b/Sorting_heapsort_anim.gif
+
+
 ## [Insertion](crate::sorts::insertion)
 
 Excerpt From [Wikipedia][insertion-wiki]: **Insertion sort** is a simple sorting algorithm that builds the final sorted array (or list) one item at a time. It is much less efficient on large lists than more advanced algorithms such as quicksort, heapsort, or merge sort.
