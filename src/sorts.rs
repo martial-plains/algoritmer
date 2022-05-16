@@ -16,6 +16,7 @@ mod merge;
 mod quick;
 mod selection;
 mod shell;
+mod stooge;
 mod wiggle;
 
 pub use bead::*;
@@ -34,4 +35,5 @@ pub use merge::*;
 pub use quick::*;
 pub use selection::*;
 pub use shell::*;
+pub use stooge::*;
 pub use wiggle::*;

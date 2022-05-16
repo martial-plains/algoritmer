@@ -82,7 +82,7 @@ Excerpt From [Wikipedia][bucket-wiki]: **Bucket sort**, or **bin sort**, is a so
   - Time Complexity
     - Worst case performance: 0(n²)
     - Average performance: ![alt text][<https://wikimedia.org/api/rest_v1/media/math/render/svg/b508fd973073e5379c61e04adfc2476a5f4803ad>], where k is the number of buckets.
-    ![alt text][<https://wikimedia.org/api/rest_v1/media/math/render/svg/b043aed20b06a58bb04c557b0d9b6001d5f6aacc>]
+      ![alt text][<https://wikimedia.org/api/rest_v1/media/math/render/svg/b043aed20b06a58bb04c557b0d9b6001d5f6aacc>]
   - Space Complexity
     - Worst case complexity: O(n + k)
 
@@ -192,7 +192,6 @@ Excerpt From [Wikipedia][heap-wiki]: In computer science, **heapsort** is a comp
 [heap-wiki]: https://en.wikipedia.org/wiki/Heapsort
 [heap-image]: https://upload.wikimedia.org/wikipedia/commons/1/1b/Sorting_heapsort_anim.gif
 
-
 ## [Insertion](crate::sorts::insertion)
 
 Excerpt From [Wikipedia][insertion-wiki]: **Insertion sort** is a simple sorting algorithm that builds the final sorted array (or list) one item at a time. It is much less efficient on large lists than more advanced algorithms such as quicksort, heapsort, or merge sort.
@@ -282,7 +281,7 @@ Excerpt From [Wikipedia][shell-wiki]: **Shellsort**, also known as **Shell sort*
 - Performance
   - Time Complexity
     - Worst case performance: O(n²) (worst known worst case gap sequence)
-    O(n log²n) (best known worst case gap sequence)
+      O(n log²n) (best known worst case gap sequence)
     - Best case performance: O(n log n) (most gap sequences)
       O(n log² n) (best known worst-case gap sequence)
     - Average case performance: depends on gap sequence
@@ -291,5 +290,20 @@ Excerpt From [Wikipedia][shell-wiki]: **Shellsort**, also known as **Shell sort*
 
 [shell-wiki]: https://en.wikipedia.org/wiki/Shellsort
 [shell-image]: https://upload.wikimedia.org/wikipedia/commons/d/d8/Sorting_shellsort_anim.gif
+
+## [Stooge](crate::sorts::stooge)
+
+Excerpt From [Wikipedia][stooge-wiki]: **Stooge sort** is a recursive sorting algorithm. It is notable for its exceptionally bad time complexity of O(n<sup>log 3 / log 1.5 </sup>) = O(n<sup>2.7095...</sup>). The running time of the algorithm is thus slower compared to reasonable sorting algorithms, and is slower than bubble sort, a canonical example of a fairly inefficient sort. It is however more efficient than Slowsort. The name comes from The Three Stooges.
+
+![alt text][stooge-image]
+
+- Performance
+  - Time Complexity
+    - Worst case performance: O(n<sup>log 3 / log 1.5 </sup>)
+  - Space Complexity
+    - Worst case complexity: O(n)
+
+[stooge-wiki]: https://en.wikipedia.org/wiki/Stooge_sort
+[stooge-image]: https://upload.wikimedia.org/wikipedia/commons/f/f8/Sorting_stoogesort_anim.gif
 
 ## [Wiggle](crate::sorts::wiggle)
