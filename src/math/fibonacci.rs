@@ -52,7 +52,7 @@ pub fn memoized(nth: usize) -> usize {
         match arg {
             0 => 0,
             1 => 1,
-            n => (memoize(cache, fib_memo, n - 1) + memoize(cache, fib_memo, arg - 2)),
+            n => memoize(cache, fib_memo, n - 1) + memoize(cache, fib_memo, arg - 2),
         }
     }
     memoize(&mut HashMap::new(), fib_memo, nth)
