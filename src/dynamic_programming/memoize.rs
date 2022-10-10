@@ -1,5 +1,9 @@
 use core::hash::Hash;
+
+#[cfg(not(target_feature = "std"))]
 use hashbrown::HashMap;
+#[cfg(target_feature = "std")]
+use std::collections::HashMap;
 
 /// Memoization is a method used to reduce function calls in recursive functions or other functions that are called very frequently
 ///

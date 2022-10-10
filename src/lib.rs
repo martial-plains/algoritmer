@@ -29,6 +29,10 @@
 #![feature(decl_macro)]
 #![no_std]
 
+#[cfg(target_feature = "std")]
+extern crate std;
+
+#[cfg(not(target_feature = "std"))]
 extern crate alloc;
 
 pub mod dynamic_programming;

@@ -2,14 +2,17 @@
 //!
 //! [Wikipedia](https://en.wikipedia.org/wiki/Fibonacci_number)
 
+#[cfg(not(target_feature = "std"))]
 use hashbrown::HashMap;
+#[cfg(target_feature = "std")]
+use std::collections::HashMap;
 
 use crate::dynamic_programming::memoize;
 
 /// Calculate the nth Fibonacci number recursively.
-/// 
+///
 /// # Arguments
-/// 
+///
 /// * `nth` - The nth Fibonacci number to calculate.
 pub fn recursive(nth: usize) -> usize {
     if nth <= 1 {
@@ -63,7 +66,7 @@ pub fn memoized(nth: usize) -> usize {
 /// # Arguments
 ///
 /// * `nth` - The nth Fibonacci number to calculate.
-/// 
+///
 /// # Note
 /// This is sufficient to calculate the first 70 Fibonacci numbers.
 pub fn analytic(nth: usize) -> usize {
