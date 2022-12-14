@@ -5,9 +5,11 @@ mod kmp;
 mod naive_pattern_search;
 mod rabin_karp;
 mod word_occurrences;
+mod z_function;
 
 pub use brute_force::*;
 pub use kmp::*;
 pub use naive_pattern_search::*;
 pub use rabin_karp::*;
 pub use word_occurrences::*;
+pub use z_function::*;

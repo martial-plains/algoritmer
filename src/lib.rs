@@ -1,7 +1,6 @@
 //! # Algorithms for Rust
 #![deny(
     bad_style,
-    const_err,
     dead_code,
     improper_ctypes,
     missing_debug_implementations,
