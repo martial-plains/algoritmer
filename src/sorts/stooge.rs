@@ -3,9 +3,9 @@
 /// # Arguments
 ///
 /// * `array` - The array to sort.
-/// 
+///
 /// # References
-/// 
+///
 /// * [Wikipedia](https://en.wikipedia.org/wiki/Stooge_sort)
 pub fn stooge<T>(array: &mut [T])
 where

@@ -18,16 +18,16 @@ const MODULUS: isize = 1000003;
 ///     length as the pattern
 ///     calculating the hash of the text within the window compare it with the hash
 ///     of the pattern. Only testing equality if the hashes match
-/// 
+///
 /// 3) If the hashes match then check if the text is equal to the pattern
-/// 
+///
 /// # Arguments
-/// 
+///
 /// * `text` - The text to be searched
 /// * `pattern` - The word sought
-/// 
+///
 /// # Returns
-/// 
+///
 /// Returns true if the pattern is found in the text else false
 pub fn rabin_karp_check(text: &str, pattern: &str) -> bool {
     let p_len = pattern.len();

@@ -1,11 +1,11 @@
 /// A pangram or holoalphabetic sentence is a sentence using every letter of a given alphabet at least once
-/// 
-/// # Arguments 
-/// 
+///
+/// # Arguments
+///
 /// * `text` - The sentence to be checked
-/// 
+///
 /// # Returns
-/// 
+///
 /// Returns true if the sentence is a pangram else false
 ///
 /// - [Pangram](https://en.wikipedia.org/wiki/Pangram)

@@ -1,4 +1,4 @@
-/// Create a **HashMap** from a list of key-value pairs
+/// Create a `HashMap` from a list of key-value pairs
 ///
 /// ## Example
 ///

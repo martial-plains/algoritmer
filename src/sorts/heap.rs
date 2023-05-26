@@ -4,9 +4,9 @@
 ///
 /// * `array` - The array to sort.
 /// * `order` - The order to sort the array in.
-/// 
+///
 /// # References
-/// 
+///
 /// * [Wikipedia](https://en.wikipedia.org/wiki/Heapsort)
 pub fn heap<T, F>(array: &mut [T], order: F)
 where

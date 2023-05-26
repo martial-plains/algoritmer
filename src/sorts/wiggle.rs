@@ -17,9 +17,9 @@
 /// println!("{:?}", data); // [3, 5, 1, 6, 2, 4]
 ///
 /// ```
-/// 
+///
 /// # References
-/// 
+///
 /// - [Wikipedia](https://en.wikipedia.org/wiki/Wiggle_sort)
 pub fn wiggle<T>(arr: &mut [T])
 where

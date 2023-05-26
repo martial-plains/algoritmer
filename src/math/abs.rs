@@ -18,7 +18,6 @@ pub trait AbsMin {
 
 impl AbsMin for Vec<i8> {
     type Item = Option<i8>;
-    /// Return the minimum value of the collection.
     fn abs_min(&self) -> Self::Item {
         self.iter()
             .map(|&x| (x.clone().abs(), x))
@@ -29,7 +28,6 @@ impl AbsMin for Vec<i8> {
 
 impl AbsMin for Vec<i32> {
     type Item = Option<i32>;
-    /// Return the minimum value of the collection.
     fn abs_min(&self) -> Self::Item {
         self.iter()
             .map(|&x| (x.clone().abs(), x))
@@ -40,7 +38,6 @@ impl AbsMin for Vec<i32> {
 
 impl AbsMin for Vec<i64> {
     type Item = Option<i64>;
-    /// Return the minimum value of the collection.
     fn abs_min(&self) -> Self::Item {
         self.iter()
             .map(|&x| (x.clone().abs(), x))
@@ -51,7 +48,6 @@ impl AbsMin for Vec<i64> {
 
 impl AbsMax for Vec<i8> {
     type Item = Option<i8>;
-    /// Return the absolute maximum of a list of items.
     fn abs_max(&self) -> Self::Item {
         self.iter()
             .map(|&x| (x.clone().abs(), x))
@@ -62,7 +58,6 @@ impl AbsMax for Vec<i8> {
 
 impl AbsMax for Vec<i32> {
     type Item = Option<i32>;
-    /// Return the absolute maximum of a list of items.
     fn abs_max(&self) -> Self::Item {
         self.iter()
             .map(|&x| (x.clone().abs(), x))
@@ -73,7 +68,6 @@ impl AbsMax for Vec<i32> {
 
 impl AbsMax for Vec<i64> {
     type Item = Option<i64>;
-    /// Return the absolute maximum of a list of items.
     fn abs_max(&self) -> Self::Item {
         self.iter()
             .map(|&x| (x.clone().abs(), x))

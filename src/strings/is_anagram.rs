@@ -2,14 +2,14 @@ use alloc::vec::Vec;
 
 /// Two strings are anagrams if they are made of the same letters
 /// arranged differently (ignoring the case).
-/// 
+///
 /// # Arguments
-/// 
+///
 /// * `s1` - The first string
 /// * `s2` - The second string
-/// 
+///
 /// # Returns
-/// 
+///
 /// Returns true if the strings are anagrams, false otherwise
 pub fn is_anagram(s1: &str, s2: &str) -> bool {
     let mut a: Vec<char> = s1

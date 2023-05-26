@@ -25,52 +25,44 @@
 /// # References
 ///
 /// - [Wikipedia](https://en.wikipedia.org/wiki/Quicksort)
-pub fn quick<T: Ord>(arr: &mut [T], lo: isize, hi: isize) {
+pub fn quick<T: Ord>(arr: &mut [T], lo: usize, hi: usize) {
     if lo < hi {
-        let p = partition(arr, lo, hi);
-        quick(arr, lo, p - 1);
-        quick(arr, p + 1, hi);
+        let pivot_index = partition(arr, lo, hi);
+        if pivot_index > 0 {
+            quick(arr, lo, pivot_index - 1);
+        }
+        quick(arr, pivot_index + 1, hi);
     }
 }
 
-fn partition<T: PartialOrd>(arr: &mut [T], lo: isize, hi: isize) -> isize {
-    let pivot = hi as usize;
-    let mut i = lo - 1;
-    let mut j = hi;
-
-    loop {
-        i += 1;
-        while arr[i as usize] < arr[pivot] {
+fn partition<T: Ord>(arr: &mut [T], lo: usize, hi: usize) -> usize {
+    let pivot_index = hi;
+    let mut i = lo;
+    for j in lo..hi {
+        if arr[j] <= arr[pivot_index] {
+            arr.swap(i, j);
             i += 1;
         }
-        j -= 1;
-        while j >= 0 && arr[j as usize] > arr[pivot] {
-            j -= 1;
-        }
-        if i >= j {
-            break;
-        } else {
-            arr.swap(i as usize, j as usize);
-        }
     }
-    arr.swap(i as usize, pivot);
+    arr.swap(i, pivot_index);
     i
 }
 
 #[cfg(test)]
 mod tests {
-    use super::*;
 
     use alloc::vec;
     use alloc::vec::Vec;
 
     use test_case::test_case;
 
+    use crate::sorts::quick;
+
     #[test_case( vec![25, 26, 22, 24, 27, 23, 21],  vec![21, 22, 23, 24, 25, 26, 27])]
     #[test_case( vec![26, 17, 20, 11, 23, 21, 13, 18, 24, 14, 12, 22, 16, 16, 15, 19, 25],  vec![11, 12, 13, 14, 15, 16, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26])]
-    fn test_quicksort(mut arr: Vec<isize>, expected: Vec<isize>) {
+    fn test_quicksort(mut arr: Vec<usize>, expected: Vec<usize>) {
         let last_idx = arr.len() - 1;
-        quick(&mut arr, 0, last_idx as isize);
+        quick(&mut arr, 0, last_idx);
         let actual = arr;
         assert_eq!(actual, expected);
     }

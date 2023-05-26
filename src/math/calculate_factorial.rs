@@ -3,6 +3,14 @@
 /// # Arguments
 ///
 /// * `num` - The number to calculate the factorial of
+///
+/// # Returns
+///
+/// The factorial of the input number `num`.
+///
+/// # Panics
+///
+/// This function will panic if the input num is a negative number, as there is no factorial defined for negative integers.
 pub fn calculate_factorial(num: i32) -> i32 {
     if num < 0 {
         panic!("No Factorial for negative numbers");

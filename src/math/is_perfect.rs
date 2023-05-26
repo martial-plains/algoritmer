@@ -1,8 +1,41 @@
 /// Returns true if a number is perfect.
 ///
+/// A perfect number is a positive integer that is equal to the sum of its proper divisors.
+/// For example, the number 6 is perfect because its proper divisors are 1, 2, and 3, and
+/// their sum is 6, which is equal to the number itself.
+///
 /// # Arguments
 ///
 /// * `number` - The number to check
+///
+/// # Examples
+///
+/// ```
+/// use algorithms::math::is_perfect;
+///
+/// assert_eq!(is_perfect(6), true);
+/// assert_eq!(is_perfect(28), true);
+/// assert_eq!(is_perfect(12), false);
+/// assert_eq!(is_perfect(496), true);
+/// assert_eq!(is_perfect(10), false);
+/// ```
+///
+/// The `is_perfect` function can be used to determine if a given number is perfect. In the examples
+/// above, the function is called with different numbers, and the expected results are asserted using
+/// the `assert_eq!` macro. The first example checks if 6 is a perfect number, which is true. The second
+/// example checks if 28 is a perfect number, which is also true. The third example checks if 12 is a
+/// perfect number, which is false. The fourth example checks if 496 is a perfect number, which is true.
+/// Lastly, the fifth example checks if 10 is a perfect number, which is false.
+///
+/// ```
+/// use algorithms::math::is_perfect;
+///
+/// assert_eq!(is_perfect(-6), false);
+/// assert_eq!(is_perfect(0), false);
+/// ```
+///
+/// The function returns false for non-positive numbers (less than or equal to 0) since they are not
+/// considered perfect numbers.
 pub fn is_perfect(number: i32) -> bool {
     match number {
         x if x <= 0 => false,

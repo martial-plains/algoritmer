@@ -1,11 +1,11 @@
 /// Determine whether the string is palindrome
-/// 
+///
 /// # Arguments
-/// 
+///
 /// * `text` - The text to be checked
-/// 
+///
 /// # Returns
-/// 
+///
 /// Returns true if the string is palindrome else false
 pub fn is_palindrome(text: &str) -> bool {
     text.chars()

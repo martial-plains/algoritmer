@@ -11,28 +11,43 @@ use core::cmp::Ordering;
 ///
 /// # Arguments
 ///
-/// * `arr` - The array being searched
-/// * `key` - The target value being searched for
+/// * `arr` - The array being searched. It must be sorted in ascending order.
+/// * `key` - The target value being searched for.
 ///
 /// # Returns
 ///
-/// The index of the target value if found, or None if not found
+/// The index of the target value if found, or `None` if not found.
+///
+/// # Examples
+///
+/// ```
+/// use algorithms::search::binary;
+///
+/// let arr = [1, 3, 5, 7, 9];
+/// assert_eq!(binary(&arr, 5), Some(2));
+///
+/// let arr = [1, 3, 5, 7, 9];
+/// assert_eq!(binary(&arr, 2), None);
+///
+/// let arr: [char; 6] = ['a', 'b', 'c', 'd', 'e', 'f'];
+/// assert_eq!(binary(&arr, 'd'), Some(3));
+/// ```
 ///
 /// # Performance
 ///
 /// ## Time Complexity
 ///
-/// - Best: O(1)
-/// - Worst: O(log n)
-/// - Average: O(log n)
+/// - Best: O(1) - when the target value is at the middle element of the array.
+/// - Worst: O(log n) - when the target value is at the extreme ends of the array.
+/// - Average: O(log n) - logarithmic time complexity based on the size of the array.
 ///
 /// ## Space Complexity
 ///
-/// O(1)
+/// O(1) - the algorithm uses a constant amount of additional space.
 ///
 /// # References
 ///
-/// - [Wikipedia](https://en.wikipedia.org/wiki/Insertion_sort#Variants)
+/// - [Wikipedia](https://en.wikipedia.org/wiki/Binary_search_algorithm)
 pub fn binary<T>(arr: &[T], key: T) -> Option<usize>
 where
     T: Ord,
