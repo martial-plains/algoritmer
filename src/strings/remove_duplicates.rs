@@ -11,7 +11,6 @@ use alloc::{string::String, vec::Vec};
 /// Returns the text without duplicates
 pub fn remove_duplicates(text: &str) -> String {
     text.split_whitespace()
-        .into_iter()
         .fold(Vec::new(), |mut init, t| {
             if !init.contains(&t) {
                 init.push(t);
