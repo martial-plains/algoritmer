@@ -15,7 +15,7 @@ fn bead_sort_bench(b: &mut Bencher) {
 fn bitonic_sort_bench(b: &mut Bencher) {
     let mut arr = [1, 3, 5, 7, 9, 11, 13, 15, 2, 4, 6, 8, 10, 12, 14, 16];
     let length = arr.len() - 1;
-    b.iter(|| bitonic(&mut arr, 0, length, 0));
+    b.iter(|| bitonic(&mut arr, 0, length, false));
 }
 
 #[bench]
@@ -63,7 +63,7 @@ fn merge_sort_bench(b: &mut Bencher) {
 #[bench]
 fn quick_sort_bench(b: &mut Bencher) {
     let mut arr = [1, 3, 5, 7, 9, 11, 13, 15, 2, 4, 6, 8, 10, 12, 14, 16];
-    let hi = arr.len() as isize - 1;
+    let hi = arr.len() - 1;
     b.iter(|| quick(&mut arr, 0, hi));
 }
 
