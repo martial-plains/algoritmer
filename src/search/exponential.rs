@@ -34,7 +34,7 @@ use core::cmp::Ordering;
 ///
 /// let array = [1, 3, 5, 7, 9, 11, 13];
 /// let key = 7;
-/// let index = exponential(&array, key);
+/// let index = exponential(&array, &key);
 /// assert_eq!(index, Some(3));
 /// ```
 ///
@@ -43,7 +43,7 @@ use core::cmp::Ordering;
 ///
 /// let array = [1, 3, 5, 7, 9, 11, 13];
 /// let key = 10;
-/// let index = exponential(&array, key);
+/// let index = exponential(&array, &key);
 /// assert_eq!(index, None);
 /// ```
 ///

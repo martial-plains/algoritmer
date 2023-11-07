@@ -24,13 +24,13 @@ use core::cmp::Ordering;
 /// use algorithms::search::binary;
 ///
 /// let arr = [1, 3, 5, 7, 9];
-/// assert_eq!(binary(&arr, 5), Some(2));
+/// assert_eq!(binary(&arr, &5), Some(2));
 ///
 /// let arr = [1, 3, 5, 7, 9];
-/// assert_eq!(binary(&arr, 2), None);
+/// assert_eq!(binary(&arr, &2), None);
 ///
 /// let arr: [char; 6] = ['a', 'b', 'c', 'd', 'e', 'f'];
-/// assert_eq!(binary(&arr, 'd'), Some(3));
+/// assert_eq!(binary(&arr, &'d'), Some(3));
 /// ```
 ///
 /// # Performance
