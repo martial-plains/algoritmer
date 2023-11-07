@@ -34,6 +34,8 @@ use alloc::{
 /// # References
 ///
 /// [Jaro–Winkler Algorithm](https://en.wikipedia.org/wiki/Jaro%E2%80%93Winkler_distance)
+#[must_use]
+#[allow(clippy::pedantic)]
 pub fn jaro_winkler(str1: &str, str2: &str) -> f64 {
     let get_matched_chars = |_str1: &str, _str2: &str| -> String {
         let istr1 = _str1;
@@ -112,14 +114,15 @@ mod tests {
     use super::*;
     use test_case::test_case;
 
-    #[test_case("martha", "marhta", 0.9611111111111111)]
-    #[test_case("CRATE", "TRACE", 0.7333333333333334)]
+    #[test_case("martha", "marhta", 0.961_111_111_111_111_1)]
+    #[test_case("CRATE", "TRACE", 0.733_333_333_333_333_4)]
     #[test_case("test", "dbdbdbdb", 0.0)]
     #[test_case("test", "test", 1.0)]
-    #[test_case("hello world", "HeLLo W0rlD", 0.6363636363636364)]
+    #[test_case("hello world", "HeLLo W0rlD", 0.636_363_636_363_636_4)]
     #[test_case("test", "", 0.0)]
-    #[test_case("hello", "world", 0.4666666666666666)]
-    #[test_case("hell**o", "*world", 0.4365079365079365)]
+    #[test_case("hello", "world", 0.466_666_666_666_666_6)]
+    #[test_case("hell**o", "*world", 0.436_507_936_507_936_5)]
+    #[allow(clippy::float_cmp)]
     fn test_jaro_winkler(str1: &str, str2: &str, expected: f64) {
         assert_eq!(jaro_winkler(str1, str2), expected);
     }

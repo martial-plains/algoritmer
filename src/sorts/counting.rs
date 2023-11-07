@@ -3,6 +3,7 @@ use alloc::vec::Vec;
 use core::{cmp::Ord, ops::AddAssign};
 
 /// A counting sort implementation for all unsigned types
+#[allow(clippy::pedantic)]
 pub fn counting<T>(arr: &mut [T])
 where
     T: Ord + Into<f64> + From<u8> + AddAssign + Copy,
@@ -23,7 +24,7 @@ where
 
     // This will iterate from 0 to the largest data point in `arr`
     // `number` contains the occurrences of the data point `data`
-    for &number in occurrences.iter() {
+    for &number in &occurrences {
         for _ in 0..number {
             arr[i] = data;
             i += 1;

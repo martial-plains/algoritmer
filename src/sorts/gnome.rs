@@ -15,7 +15,7 @@
 /// # References
 ///
 /// [Wikipedia](https://en.wikipedia.org/wiki/Gnome_sort)
-pub fn gnome_sort<T: PartialOrd>(arr: &mut [T]) {
+pub fn gnome<T: PartialOrd>(arr: &mut [T]) {
     let len = arr.len();
     let mut i: usize = 1;
     let mut j: usize = 2;
@@ -39,9 +39,9 @@ pub fn gnome_sort<T: PartialOrd>(arr: &mut [T]) {
 mod tests {
     #[test]
     fn gnome_sort() {
-        use super::gnome_sort;
+        use super::gnome;
         let mut arr = [1, 3, 2, 4, 5, 6, 7, 8, 9, 10];
-        gnome_sort(&mut arr);
+        gnome(&mut arr);
         assert_eq!(arr, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
     }
 }

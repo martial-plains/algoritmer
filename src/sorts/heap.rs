@@ -15,12 +15,12 @@ where
     let len = array.len();
     // Create heap
     for start in (0..len / 2).rev() {
-        shift_down(array, &order, start, len - 1)
+        shift_down(array, &order, start, len - 1);
     }
 
     for end in (1..len).rev() {
         array.swap(0, end);
-        shift_down(array, &order, 0, end - 1)
+        shift_down(array, &order, 0, end - 1);
     }
 }
 
@@ -39,7 +39,7 @@ where
         }
         if order(&array[root], &array[child]) {
             array.swap(root, child);
-            root = child
+            root = child;
         } else {
             break;
         }

@@ -8,6 +8,7 @@ use alloc::{
 /// # Arguments
 ///
 /// * `word` - The word to reverse
+#[must_use]
 pub fn reverse_word(word: &str) -> String {
     word.chars().rev().collect()
 }
@@ -17,6 +18,7 @@ pub fn reverse_word(word: &str) -> String {
 /// # Arguments
 ///
 /// * `sentence` - The sentence to be reversed.
+#[must_use]
 pub fn reverse_word_order(sentence: &str) -> String {
     sentence.split(' ').rev().collect()
 }
@@ -45,12 +47,17 @@ pub fn reverse_word_order(sentence: &str) -> String {
 ///
 /// //Output: 1 12 123 1234 12345 123456
 /// ```
+#[must_use]
+#[allow(clippy::module_name_repetitions)]
 pub fn reverse_words_longer_than(sentence: &str, n: usize) -> String {
     sentence
         .split_whitespace()
-        .map(|word| match word.len() > n {
-            true => reverse_word(word),
-            false => word.to_string(),
+        .map(|word| {
+            if word.len() > n {
+                reverse_word(word)
+            } else {
+                word.to_string()
+            }
         })
         .collect::<Vec<String>>()
         .join(" ")
@@ -65,6 +72,6 @@ mod tests {
     #[test_case(("Hey wollef sroirraw", 4))]
     fn test_remove_long_words(data: (&str, usize)) {
         let actual = reverse_words_longer_than(data.0, data.1);
-        assert_eq!(actual, "Hey fellow warriors")
+        assert_eq!(actual, "Hey fellow warriors");
     }
 }

@@ -14,6 +14,7 @@ use crate::dynamic_programming::memoize;
 /// # Arguments
 ///
 /// * `nth` - The nth Fibonacci number to calculate.
+#[must_use]
 pub fn recursive(nth: usize) -> usize {
     if nth <= 1 {
         nth
@@ -27,11 +28,11 @@ pub fn recursive(nth: usize) -> usize {
 /// # Arguments
 ///
 /// * `nth` - The nth Fibonacci number to calculate.
+#[must_use]
 pub fn iterative(nth: usize) -> usize {
     match nth {
         0 => 0,
-        1 => 1,
-        2 => 1,
+        1 | 2 => 1,
         _ => {
             let mut prev = 1;
             let mut curr = 1;
@@ -45,7 +46,7 @@ pub fn iterative(nth: usize) -> usize {
     }
 }
 
-/// Calculate the nth Fibonacci number using dynamic_programming and memoization.
+/// Calculate the nth Fibonacci number using dynamic programming and memoization.
 ///
 /// # Arguments
 ///
@@ -69,11 +70,18 @@ pub fn memoized(nth: usize) -> usize {
 ///
 /// # Note
 /// This is sufficient to calculate the first 70 Fibonacci numbers.
+#[must_use]
+#[allow(
+    clippy::cast_possible_truncation,
+    clippy::cast_sign_loss,
+    clippy::cast_possible_wrap
+)]
 pub fn analytic(nth: usize) -> usize {
     let sqrt_5 = f64::sqrt(5.0);
     let phi = (1. + sqrt_5) / 2.;
     let q = 1. / phi;
-    ((phi.powf(nth as f64) + q.powf(nth as f64)) / sqrt_5 + 0.5) as usize
+
+    ((phi.powi(nth as i32) + q.powi(nth as i32)) / sqrt_5 + 0.5) as usize
 }
 
 #[cfg(test)]

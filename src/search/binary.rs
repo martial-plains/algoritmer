@@ -48,7 +48,7 @@ use core::cmp::Ordering;
 /// # References
 ///
 /// - [Wikipedia](https://en.wikipedia.org/wiki/Binary_search_algorithm)
-pub fn binary<T>(arr: &[T], key: T) -> Option<usize>
+pub fn binary<T>(arr: &[T], key: &T) -> Option<usize>
 where
     T: Ord,
 {
@@ -75,15 +75,15 @@ mod tests {
     #[test]
     fn binary_search_test() {
         let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-        assert_eq!(binary(&arr, 1), Some(0));
-        assert_eq!(binary(&arr, 2), Some(1));
-        assert_eq!(binary(&arr, 3), Some(2));
-        assert_eq!(binary(&arr, 4), Some(3));
-        assert_eq!(binary(&arr, 5), Some(4));
-        assert_eq!(binary(&arr, 6), Some(5));
-        assert_eq!(binary(&arr, 7), Some(6));
-        assert_eq!(binary(&arr, 8), Some(7));
-        assert_eq!(binary(&arr, 9), Some(8));
-        assert_eq!(binary(&arr, 10), None);
+        assert_eq!(binary(&arr, &1), Some(0));
+        assert_eq!(binary(&arr, &2), Some(1));
+        assert_eq!(binary(&arr, &3), Some(2));
+        assert_eq!(binary(&arr, &4), Some(3));
+        assert_eq!(binary(&arr, &5), Some(4));
+        assert_eq!(binary(&arr, &6), Some(5));
+        assert_eq!(binary(&arr, &7), Some(6));
+        assert_eq!(binary(&arr, &8), Some(7));
+        assert_eq!(binary(&arr, &9), Some(8));
+        assert_eq!(binary(&arr, &10), None);
     }
 }

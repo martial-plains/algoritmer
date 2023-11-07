@@ -14,7 +14,7 @@ use core::cmp::Ordering;
 /// # References
 ///
 /// - [Wikipedia](https://en.wikipedia.org/wiki/Ternary_search)
-pub fn ternary_search<T>(arr: &[T], key: &T) -> Option<usize>
+pub fn ternary<T>(arr: &[T], key: &T) -> Option<usize>
 where
     T: Ord,
 {
@@ -52,8 +52,8 @@ mod tests {
     #[test]
     fn test_ternary_search() {
         let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-        assert_eq!(ternary_search(&arr, &1), Some(0));
-        assert_eq!(ternary_search(&arr, &10), Some(9));
-        assert_eq!(ternary_search(&arr, &11), None);
+        assert_eq!(ternary(&arr, &1), Some(0));
+        assert_eq!(ternary(&arr, &10), Some(9));
+        assert_eq!(ternary(&arr, &11), None);
     }
 }

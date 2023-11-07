@@ -12,6 +12,7 @@ use std::collections::HashMap;
 /// # Returns
 ///
 /// Returns a map containing count of each word
+#[must_use]
 pub fn word_occurrences(text: &str) -> HashMap<&str, u32> {
     let mut occurrence: HashMap<&str, u32> = HashMap::new();
     for word in text.split_ascii_whitespace() {
@@ -35,6 +36,6 @@ mod tests {
         let _ = expected.insert("Hello", 1);
         let _ = expected.insert("World", 1);
         let actual = word_occurrences("Hello World");
-        assert_eq!(expected, actual)
+        assert_eq!(expected, actual);
     }
 }

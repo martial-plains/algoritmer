@@ -4,6 +4,10 @@
 ///
 /// * `array` - The array to sort.
 ///
+/// # Panics
+///
+/// Panics if the array is empty
+///
 /// # References
 ///
 /// * [Wikipedia](https://en.wikipedia.org/wiki/Stooge_sort)

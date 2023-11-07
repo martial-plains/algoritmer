@@ -65,6 +65,7 @@ where
 ///
 /// * `arr` - The array to sort.
 /// * `pivot` - The pivot to sort until.
+#[allow(clippy::module_name_repetitions)]
 pub fn insertion_until<T>(arr: &mut [T], pivot: usize)
 where
     T: PartialOrd + Copy,
@@ -92,14 +93,14 @@ mod tests {
 
     use super::*;
 
-    #[test_case(vec![25, 26, 22, 24, 27, 23, 21], vec![21, 22, 23, 24, 25, 26, 27 ] ; "insertion sort")]
-    fn test_insertion_sort(mut actual: Vec<isize>, expected: Vec<isize>) {
+    #[test_case(vec![25, 26, 22, 24, 27, 23, 21], &[21, 22, 23, 24, 25, 26, 27 ] ; "insertion sort")]
+    fn test_insertion_sort(mut actual: Vec<isize>, expected: &[isize]) {
         insertion(&mut actual);
         assert_eq!(actual, expected);
     }
 
-    #[test_case(vec![25, 26, 22, 24, 27, 23, 21], vec![21, 22, 23, 24, 25, 26, 27 ] ; "insertion sort until")]
-    fn test_insertion_sort_until(mut actual: Vec<isize>, expected: Vec<isize>) {
+    #[test_case(vec![25, 26, 22, 24, 27, 23, 21], &[21, 22, 23, 24, 25, 26, 27 ] ; "insertion sort until")]
+    fn test_insertion_sort_until(mut actual: Vec<isize>, expected: &[isize]) {
         let pivot = actual.len();
         insertion_until(&mut actual, pivot);
         assert_eq!(actual, expected);

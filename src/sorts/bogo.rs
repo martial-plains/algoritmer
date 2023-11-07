@@ -18,8 +18,6 @@ where
     use rand::seq::SliceRandom;
     use rand::thread_rng;
 
-    let mut rng = thread_rng();
-
     fn is_sorted<T>(collection: &mut [T]) -> bool
     where
         T: PartialEq + PartialOrd,
@@ -34,6 +32,8 @@ where
         }
         true
     }
+
+    let mut rng = thread_rng();
 
     while !is_sorted(arr) {
         arr.shuffle(&mut rng);

@@ -29,7 +29,7 @@ where
         if i % 2 == 1 && arr[i - 1] > arr[i] {
             arr.swap(i, i - 1);
         }
-    })
+    });
 }
 
 mod tests {

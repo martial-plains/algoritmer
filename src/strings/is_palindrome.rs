@@ -7,6 +7,7 @@
 /// # Returns
 ///
 /// Returns true if the string is palindrome else false
+#[must_use]
 pub fn is_palindrome(text: &str) -> bool {
     text.chars()
         .filter(|c| c.is_alphanumeric())
@@ -30,6 +31,6 @@ mod tests {
     #[test_case("Mr. Owl ate my metal worm?", true)]
     fn check_palindrome(text: &str, expected: bool) {
         let actual = is_palindrome(text);
-        assert_eq!(expected, actual)
+        assert_eq!(expected, actual);
     }
 }

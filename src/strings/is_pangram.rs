@@ -9,6 +9,7 @@
 /// Returns true if the sentence is a pangram else false
 ///
 /// - [Pangram](https://en.wikipedia.org/wiki/Pangram)
+#[must_use]
 pub fn is_pangram(text: &str) -> bool {
     text.to_ascii_lowercase()
         .chars()
@@ -37,6 +38,6 @@ mod tests {
     #[test_case("", false)]
     fn check_pangram(sentence: &str, expected: bool) {
         let actual = is_pangram(sentence);
-        assert_eq!(expected, actual)
+        assert_eq!(expected, actual);
     }
 }

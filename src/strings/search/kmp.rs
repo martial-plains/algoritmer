@@ -13,29 +13,39 @@ use alloc::vec::Vec;
 /// # References
 ///
 /// [Knuth-Morris-Pratt Algorithm](https://en.wikipedia.org/wiki/Knuth%E2%80%93Morris%E2%80%93Pratt_algorithm)
+///
+/// # Panics
+///
+/// Panics if `pattern` is empty
+#[must_use]
+#[allow(clippy::module_name_repetitions)]
 pub fn kmp_check(text: &str, pattern: &str) -> bool {
     let mut i = 0; // The position of the current character in `s`
     let mut j = 0; // The position of the current character in `pat`
     let failure = get_failure_array(pattern).unwrap();
 
     while i < text.len() {
-        if pattern.chars().nth(j).unwrap() == text.chars().nth(i).unwrap() {
-            if j == pattern.len() - 1 {
-                return true;
+        if let (Some(p_i), Some(t_i)) = (pattern.chars().nth(j), text.chars().nth(i)) {
+            if p_i == t_i {
+                if j == pattern.len() - 1 {
+                    return true;
+                }
+                j += 1;
+            } else if j > 0 {
+                j = failure[j - 1];
+                continue;
             }
-            j += 1;
-        } else if j > 0 {
-            j = failure[j - 1];
-            continue;
+            i += 1;
+        } else {
+            return false;
         }
-        i += 1;
     }
 
     false
 }
 
 /// Calculates the new index if the comparison fails else returns
-/// original index
+/// None
 ///
 /// # Arguments
 ///
@@ -52,13 +62,13 @@ fn get_failure_array(p: &str) -> Option<Vec<usize>> {
 
     while pos < p.len() {
         if p.chars().nth(pos)? == p.chars().nth(cnd)? {
-            cnd += 1
+            cnd += 1;
         } else if cnd > 0 {
             cnd = t[cnd - 1];
             continue;
         }
         pos += 1;
-        t.push(cnd)
+        t.push(cnd);
     }
     Some(t)
 }

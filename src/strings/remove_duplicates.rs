@@ -9,13 +9,14 @@ use alloc::{string::String, vec::Vec};
 /// # Returns
 ///
 /// Returns the text without duplicates
+#[must_use]
 pub fn remove_duplicates(text: &str) -> String {
     text.split_whitespace()
         .fold(Vec::new(), |mut init, t| {
-            if !init.contains(&t) {
-                init.push(t);
+            if init.contains(&t) {
                 init
             } else {
+                init.push(t);
                 init
             }
         })
@@ -30,6 +31,6 @@ mod tests {
     #[test_case("Rust is great and Java is also great", "Rust is great and Java also")]
     fn check_removed_duplicates(text: &str, expected: &str) {
         let actual = remove_duplicates(text);
-        assert_eq!(expected, actual)
+        assert_eq!(expected, actual);
     }
 }

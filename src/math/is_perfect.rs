@@ -36,6 +36,7 @@
 ///
 /// The function returns false for non-positive numbers (less than or equal to 0) since they are not
 /// considered perfect numbers.
+#[must_use]
 pub fn is_perfect(number: i32) -> bool {
     match number {
         x if x <= 0 => false,
@@ -60,8 +61,8 @@ mod tests {
     #[test_case(28, true)]
     #[test_case(496, true)]
     #[test_case(8128, true)]
-    #[test_case(33550336, true)]
-    #[test_case(33550337, false)]
+    #[test_case(33_550_336, true)]
+    #[test_case(33_550_337, false)]
     fn is_number_perfect(n: i32, expected: bool) {
         let actual = is_perfect(n);
         assert_eq!(expected, actual);

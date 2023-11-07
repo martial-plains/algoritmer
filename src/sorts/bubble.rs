@@ -66,11 +66,11 @@ mod tests {
 
     use super::*;
 
-    #[test_case(vec![0, 5, 3, 2, 2],vec![0, 2, 2, 3, 5])]
-    #[test_case(vec![-2, -45, -5],vec![-45, -5, -2])]
-    #[test_case(vec![-23, 0, 6, -4, 34],vec![-23, -4, 0, 6, 34])]
-    #[test_case(vec![25, 21, 22, 24, 23, 27, 26],vec![21, 22, 23, 24, 25, 26, 27])]
-    fn bubble_sort_test(mut input: Vec<isize>, expected: Vec<isize>) {
+    #[test_case(vec![0, 5, 3, 2, 2],&[0, 2, 2, 3, 5])]
+    #[test_case(vec![-2, -45, -5],&[-45, -5, -2])]
+    #[test_case(vec![-23, 0, 6, -4, 34],&[-23, -4, 0, 6, 34])]
+    #[test_case(vec![25, 21, 22, 24, 23, 27, 26],&[21, 22, 23, 24, 25, 26, 27])]
+    fn bubble_sort_test(mut input: Vec<isize>, expected: &[isize]) {
         bubble(&mut input);
         let actual = input;
         assert_eq!(expected, actual);

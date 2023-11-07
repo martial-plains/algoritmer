@@ -61,7 +61,7 @@ where
                 pos += 1;
             }
 
-            (arr[pos], item) = (item, arr[pos])
+            (arr[pos], item) = (item, arr[pos]);
         }
     }
 }

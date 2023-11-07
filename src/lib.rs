@@ -23,7 +23,7 @@
     unused,
     while_true
 )]
-#![warn(clippy::all, missing_debug_implementations)]
+#![warn(clippy::all, clippy::pedantic, missing_debug_implementations)]
 #![feature(decl_macro)]
 #![no_std]
 

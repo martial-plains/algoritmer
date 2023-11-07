@@ -2,7 +2,7 @@
 const ALPHABET_SIZE: isize = 256;
 
 // Modulus to hash a string
-const MODULUS: isize = 1000003;
+const MODULUS: isize = 1_000_003;
 
 /// The Rabin-Karp Algorithm for finding a pattern within a piece of text
 /// with complexity O(nm), most efficient when it is used with multiple patterns
@@ -29,6 +29,11 @@ const MODULUS: isize = 1000003;
 /// # Returns
 ///
 /// Returns true if the pattern is found in the text else false
+/// # Panics
+///
+/// Panics if `text` or `pattern` is empty
+#[must_use]
+#[allow(clippy::module_name_repetitions)]
 pub fn rabin_karp_check(text: &str, pattern: &str) -> bool {
     let p_len = pattern.len();
     let t_len = text.len();
@@ -53,7 +58,7 @@ pub fn rabin_karp_check(text: &str, pattern: &str) -> bool {
         modulus_pow = (modulus_pow * ALPHABET_SIZE) % MODULUS;
     }
 
-    for i in 0..t_len - p_len + 1 {
+    for i in 0..=(t_len - p_len) {
         if text_hash == p_hash && &text[i..i + p_len] == pattern {
             return true;
         }

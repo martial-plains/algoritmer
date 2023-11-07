@@ -46,7 +46,7 @@ where
             let rod_upper = sequence[i];
             let rod_lower = sequence[1..][i];
             if rod_upper > rod_lower {
-                sequence.swap(i, i + 1)
+                sequence.swap(i, i + 1);
             }
         }
     }

@@ -11,6 +11,7 @@ use alloc::vec::Vec;
 /// # Returns
 ///
 /// Returns true if the strings are anagrams, false otherwise
+#[must_use]
 pub fn is_anagram(s1: &str, s2: &str) -> bool {
     let mut a: Vec<char> = s1
         .chars()
@@ -37,6 +38,6 @@ mod tests {
     #[test_case("There", "Their", false)]
     fn check_anagram(string1: &str, string2: &str, expected: bool) {
         let actual = is_anagram(string1, string2);
-        assert_eq!(expected, actual)
+        assert_eq!(expected, actual);
     }
 }

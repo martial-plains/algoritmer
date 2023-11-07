@@ -26,6 +26,11 @@ use alloc::vec::Vec;
 /// # References
 ///
 /// [Naive Pattern Search](https://en.wikipedia.org/wiki/Naive_pattern_search)
+///
+/// # Panics
+///
+/// Panics if `s` or `pattern` is empty
+#[must_use]
 pub fn naive_pattern_search<'a>(s: &'a str, pattern: &'a str) -> Vec<usize> {
     let pat_len = pattern.len();
     let mut positions = Vec::new();
@@ -34,7 +39,7 @@ pub fn naive_pattern_search<'a>(s: &'a str, pattern: &'a str) -> Vec<usize> {
         return alloc::vec![];
     }
 
-    for i in 0..s.len() - pat_len + 1 {
+    for i in 0..=(s.len() - pat_len) {
         let mut match_found = true;
         for j in 0..pat_len {
             if s.chars().nth(i + j).unwrap() != pattern.chars().nth(j).unwrap() {
@@ -43,7 +48,7 @@ pub fn naive_pattern_search<'a>(s: &'a str, pattern: &'a str) -> Vec<usize> {
             }
         }
         if match_found {
-            positions.push(i)
+            positions.push(i);
         }
     }
 

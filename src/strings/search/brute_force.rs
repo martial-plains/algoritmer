@@ -9,6 +9,7 @@
 ///
 /// Index where the pattern starts in the text
 /// `None` if the pattern is not found
+#[must_use]
 pub fn brute_force(text: &str, pattern: &str) -> Option<usize> {
     let pat_l = pattern.len();
     let txt_l = text.len();
@@ -40,12 +41,12 @@ mod tests {
             ["ab", "b", "1"],
         ];
 
-        for test in test_set.iter() {
+        for test in &test_set {
             let actual = brute_force(test[0], test[1]);
             assert_eq!(
                 test[2].parse::<isize>().unwrap(),
                 match actual {
-                    Some(val) => val as isize,
+                    Some(val) => val.try_into().unwrap(),
                     None => -1,
                 }
             );

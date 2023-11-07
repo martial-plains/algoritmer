@@ -21,6 +21,11 @@
 /// # References
 ///
 /// - [Wikipedia](https://en.wikipedia.org/wiki/Comb_sort)
+#[allow(
+    clippy::cast_possible_truncation,
+    clippy::cast_sign_loss,
+    clippy::cast_precision_loss
+)]
 pub fn comb<T>(data: &mut [T])
 where
     T: Ord,

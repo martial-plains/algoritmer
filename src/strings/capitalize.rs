@@ -5,8 +5,11 @@ use alloc::string::String;
 /// # Arguments
 ///
 /// * `text` - The text to be capitalized
+#[must_use]
 pub fn capitalize(text: &str) -> String {
-    if *text != String::new() {
+    if *text == String::new() {
+        String::new()
+    } else {
         let mut new_string = String::new();
         for (i, ch) in text.char_indices() {
             if i == 0 && text.starts_with(|c: char| c.is_ascii_lowercase()) {
@@ -16,8 +19,6 @@ pub fn capitalize(text: &str) -> String {
             }
         }
         new_string
-    } else {
-        String::new()
     }
 }
 

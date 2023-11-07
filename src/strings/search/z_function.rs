@@ -18,6 +18,7 @@ fn go_next(i: usize, result: &[usize], s: &str) -> bool {
 ///
 /// # See more
 /// [CP Algorithms](https://cp-algorithms.com/string/z-function.html)
+#[must_use]
 pub fn z_function(pattern: &str) -> Vec<usize> {
     let mut result = vec![0; pattern.len()];
     let (mut left_pointer, mut right_pointer) = (0, 0);
@@ -33,7 +34,7 @@ pub fn z_function(pattern: &str) -> Vec<usize> {
         }
 
         if i + result[i] - 1 > right_pointer {
-            (left_pointer, right_pointer) = (i, i + result[i] - 1)
+            (left_pointer, right_pointer) = (i, i + result[i] - 1);
         }
     }
 
