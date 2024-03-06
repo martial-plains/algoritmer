@@ -1,8 +1,8 @@
 use core::hash::Hash;
 
-#[cfg(not(target_feature = "std"))]
+#[cfg(not(feature = "std"))]
 use hashbrown::HashMap;
-#[cfg(target_feature = "std")]
+#[cfg(feature = "std")]
 use std::collections::HashMap;
 
 /// Memoizes the result of a function to avoid redundant function calls.
@@ -20,7 +20,10 @@ use std::collections::HashMap;
 /// # Example
 ///
 /// ```
+/// #[cfg(not(feature = "std"))]
 /// use hashbrown::HashMap;
+/// #[cfg(feature = "std")]
+/// use std::collections::HashMap;
 /// use algorithms::dynamic_programming::memoize;
 ///
 /// fn fibonacci(cache: &mut HashMap<u32, u64>, n: u32) -> u64 {
@@ -61,11 +64,12 @@ use std::collections::HashMap;
 /// # References
 ///
 /// - [Wikipedia](https://en.wikipedia.org/wiki/Memoization)
-pub fn memoize<A, R, F>(cache: &mut HashMap<A, R>, func: F, arg: A) -> R
+pub fn memoize<A, R, F, S>(cache: &mut HashMap<A, R, S>, func: F, arg: A) -> R
 where
     A: Hash + Eq + Clone,
     R: Clone,
-    F: Fn(&mut HashMap<A, R>, A) -> R,
+    F: Fn(&mut HashMap<A, R, S>, A) -> R,
+    S: core::hash::BuildHasher,
 {
     if let Some(result) = cache.get(&arg).cloned() {
         result

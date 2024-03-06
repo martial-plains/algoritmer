@@ -26,8 +26,6 @@ pub fn capitalize(text: &str) -> String {
 mod tests {
     use super::*;
 
-    use alloc::string::String;
-
     use test_case::test_case;
 
     #[test_case("123 hello world", "123 hello world")]
@@ -35,7 +33,7 @@ mod tests {
     #[test_case("a", "A")]
     #[test_case("", "")]
     fn does_it_capitalize(sentence: &str, expected: &str) {
-        let actual = capitalize(&String::from(sentence));
+        let actual = capitalize(sentence);
         assert_eq!(expected, actual);
     }
 }

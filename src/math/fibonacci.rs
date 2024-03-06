@@ -2,9 +2,9 @@
 //!
 //! [Wikipedia](https://en.wikipedia.org/wiki/Fibonacci_number)
 
-#[cfg(not(target_feature = "std"))]
+#[cfg(not(feature = "std"))]
 use hashbrown::HashMap;
-#[cfg(target_feature = "std")]
+#[cfg(feature = "std")]
 use std::collections::HashMap;
 
 use crate::dynamic_programming::memoize;

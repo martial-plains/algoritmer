@@ -32,12 +32,15 @@ where
     });
 }
 
+#[cfg(test)]
 mod tests {
+
+    use alloc::vec;
 
     #[test]
     fn wiggle_sort_test() {
-        let mut vector = alloc::vec![0, 5, 3, 2, 2];
-        let expected = alloc::vec![0, 5, 2, 3, 2];
+        let mut vector = vec![0, 5, 3, 2, 2];
+        let expected = vec![0, 5, 2, 3, 2];
         super::wiggle(&mut vector);
         let actual = vector;
         assert_eq!(expected, actual);

@@ -7,7 +7,7 @@ use algorithms::math::fibonacci::*;
 use test::Bencher;
 
 // bench: find the `BENCH_SIZE` first terms of the fibonacci sequence
-static BENCH_SIZE: usize = 1000;
+static BENCH_SIZE: usize = 10;
 
 #[bench]
 fn recursive_fibonacci(b: &mut Bencher) {

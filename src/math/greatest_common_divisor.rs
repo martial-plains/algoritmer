@@ -1,5 +1,3 @@
-use core::marker::Copy;
-
 /// Computes the greatest common divisor (GCD) of a list of nonnegative integers.
 ///
 /// # Examples

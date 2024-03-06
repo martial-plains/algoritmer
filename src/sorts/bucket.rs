@@ -1,4 +1,5 @@
 use alloc::vec::Vec;
+use alloc::vec;
 
 /// A Rust bucket sort implementation
 ///
@@ -13,7 +14,7 @@ pub fn bucket<T>(arr: &mut [T])
 where
     T: Ord + Clone,
 {
-    let mut bucket: Vec<Vec<T>> = alloc::vec![Vec::new(); arr.len()];
+    let mut bucket: Vec<Vec<T>> = vec![Vec::new(); arr.len()];
     for i in 0..arr.len() {
         bucket[i].push(arr[i].clone());
     }

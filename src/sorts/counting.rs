@@ -1,6 +1,7 @@
 use alloc::vec::Vec;
+use alloc::vec;
 
-use core::{cmp::Ord, ops::AddAssign};
+use core::ops::AddAssign;
 
 /// A counting sort implementation for all unsigned types
 #[allow(clippy::pedantic)]
@@ -10,7 +11,7 @@ where
 {
     let max = arr.len();
 
-    let mut occurrences: Vec<usize> = alloc::vec![0; max + 1];
+    let mut occurrences: Vec<usize> = vec![0; max + 1];
 
     for &data in arr.iter() {
         occurrences[data.into() as usize] += 1;
