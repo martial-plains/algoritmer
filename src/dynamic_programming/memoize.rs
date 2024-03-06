@@ -1,9 +1,6 @@
 use core::hash::Hash;
 
-#[cfg(not(feature = "std"))]
 use hashbrown::HashMap;
-#[cfg(feature = "std")]
-use std::collections::HashMap;
 
 /// Memoizes the result of a function to avoid redundant function calls.
 ///
@@ -20,10 +17,7 @@ use std::collections::HashMap;
 /// # Example
 ///
 /// ```
-/// #[cfg(not(feature = "std"))]
 /// use hashbrown::HashMap;
-/// #[cfg(feature = "std")]
-/// use std::collections::HashMap;
 /// use algorithms::dynamic_programming::memoize;
 ///
 /// fn fibonacci(cache: &mut HashMap<u32, u64>, n: u32) -> u64 {

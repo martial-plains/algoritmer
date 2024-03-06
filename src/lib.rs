@@ -27,9 +27,6 @@
 #![feature(cfg_match, decl_macro)]
 #![no_std]
 
-#[cfg(feature = "std")]
-extern crate std;
-
 extern crate alloc;
 
 pub mod dynamic_programming;
@@ -42,3 +39,5 @@ pub mod higher_order_functions;
 #[doc = include_str!("sorts/README.md")]
 pub mod sorts;
 pub mod strings;
+
+pub use hashbrown;

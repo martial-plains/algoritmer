@@ -1,7 +1,4 @@
-#[cfg(not(feature = "std"))]
 use hashbrown::HashMap;
-#[cfg(feature = "std")]
-use std::collections::HashMap;
 
 /// Create a map containing count of each word
 ///

@@ -2,10 +2,7 @@
 //!
 //! [Wikipedia](https://en.wikipedia.org/wiki/Fibonacci_number)
 
-#[cfg(not(feature = "std"))]
 use hashbrown::HashMap;
-#[cfg(feature = "std")]
-use std::collections::HashMap;
 
 use crate::dynamic_programming::memoize;
 

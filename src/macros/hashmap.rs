@@ -23,10 +23,7 @@ pub macro hashmap {
     ($($key:expr => $value:expr,)+) => { hashmap!($($key => $value),+) },
     ($($key:expr => $value:expr),*) => {
         {
-            #[cfg(not(feature = "std"))]
-            use hashbrown::HashMap;
-            #[cfg(feature = "std")]
-            use std::collections::HashMap;
+            use $crate::hashbrown::HashMap;
 
             let capacity = hashmap!(@count $($key),*);
             let mut map = HashMap::with_capacity(capacity);
