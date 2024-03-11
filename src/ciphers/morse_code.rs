@@ -84,8 +84,7 @@ pub fn encrypt(text: &str) -> String {
 
     for (index, word) in words.iter().enumerate() {
         for (index, character) in word.char_indices() {
-            morse.push_str(MORSE_TABLE[&character]);
-
+            morse.push_str(MORSE_TABLE.get(&character).unwrap_or(&String::from(character).as_str()));
             if index == word.len() {
                 morse.push_str("");
             } else {
@@ -122,9 +121,15 @@ pub fn decrypt(text: &str) -> String {
         .collect::<Vec<_>>();
 
     for split in &splits {
-        for (key, value) in MORSE_TABLE.iter() {
-            if split == value {
-                decrypted_text.push(*key);
+        if MORSE_TABLE.values().collect::<Vec<_>>().contains(&split) {
+            for (key, value) in MORSE_TABLE.iter() {
+                if split == value {
+                    decrypted_text.push(*key);
+                }
+            }
+        } else {
+            if !(*split == "/") {
+                decrypted_text.push_str(split)
             }
         }
 
@@ -156,6 +161,15 @@ mod tests {
     #[test]
     pub fn test_hello_world() {
         let text = "hello world!";
+        let encrypted = encrypt(text);
+        let decrypted = decrypt(&encrypted);
+        assert_eq!(text, decrypted);
+    }
+
+
+    #[test]
+    pub fn test_hello_world_with_emojis() {
+        let text = "hello world 👋!";
         let encrypted = encrypt(text);
         let decrypted = decrypt(&encrypted);
         assert_eq!(text, decrypted);
