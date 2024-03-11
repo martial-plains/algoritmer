@@ -127,6 +127,10 @@ pub fn decrypt(text: &str) -> String {
                 decrypted_text.push(*key);
             }
         }
+
+        if *split == "/" {
+            decrypted_text.push(' ');
+        }
     }
 
     decrypted_text
@@ -144,6 +148,14 @@ mod tests {
         assert_eq!(text, decrypted);
 
         let text = "abcdefghijklmnopqrstuvwxyz";
+        let encrypted = encrypt(text);
+        let decrypted = decrypt(&encrypted);
+        assert_eq!(text, decrypted);
+    }
+
+    #[test]
+    pub fn test_hello_world() {
+        let text = "hello world!";
         let encrypted = encrypt(text);
         let decrypted = decrypt(&encrypted);
         assert_eq!(text, decrypted);
