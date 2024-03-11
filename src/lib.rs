@@ -29,6 +29,7 @@
 
 extern crate alloc;
 
+pub mod ciphers;
 pub mod dynamic_programming;
 pub mod macros;
 pub mod math;

@@ -60,8 +60,8 @@ where
 #[cfg(test)]
 mod tests {
 
-    use alloc::vec::Vec;
     use alloc::vec;
+    use alloc::vec::Vec;
 
     use test_case::test_case;
 
