@@ -1,3 +1,5 @@
+use hashbrown::HashMap;
+
 /// Create a `HashMap` from a list of key-value pairs
 ///
 /// ## Example
@@ -23,8 +25,6 @@ pub macro hashmap {
     ($($key:expr => $value:expr,)+) => { hashmap!($($key => $value),+) },
     ($($key:expr => $value:expr),*) => {
         {
-            use $crate::hashbrown::HashMap;
-
             let capacity = hashmap!(@count $($key),*);
             let mut map = HashMap::with_capacity(capacity);
             $(

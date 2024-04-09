@@ -84,7 +84,11 @@ pub fn encrypt(text: &str) -> String {
 
     for (index, word) in words.iter().enumerate() {
         for (index, character) in word.char_indices() {
-            morse.push_str(MORSE_TABLE.get(&character).unwrap_or(&String::from(character).as_str()));
+            morse.push_str(
+                MORSE_TABLE
+                    .get(&character)
+                    .unwrap_or(&String::from(character).as_str()),
+            );
             if index == word.len() {
                 morse.push_str("");
             } else {
@@ -165,7 +169,6 @@ mod tests {
         let decrypted = decrypt(&encrypted);
         assert_eq!(text, decrypted);
     }
-
 
     #[test]
     pub fn test_hello_world_with_emojis() {
