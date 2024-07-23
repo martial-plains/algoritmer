@@ -1,3 +1,7 @@
+//! This module provides a function to calculate the floor of a floating-point number.
+//!
+//! The `floor` function returns the largest integer less than or equal to the given number.
+
 /// Return the floor of `number` as an Integral.
 ///
 /// # Arguments
@@ -29,6 +33,7 @@
 ///
 /// Be cautious when using this function with extremely large or small floating-point numbers, as the precision limitations of
 /// floating-point arithmetic may lead to inaccuracies in the calculated floor value.
+#[must_use]
 pub fn floor(number: f32) -> i32 {
     if (number as i32) as f32 - number == 0.0 {
         number as i32

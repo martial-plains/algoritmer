@@ -1,3 +1,7 @@
+//! This module provides a function to calculate the factorial of a given number.
+//!
+//! The `calculate_factorial` function computes the factorial of a non-negative integer. If a negative integer is provided, the function will panic.
+
 /// Calculates the factorial of the input
 ///
 /// # Arguments

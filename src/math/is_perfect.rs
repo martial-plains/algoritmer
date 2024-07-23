@@ -1,3 +1,5 @@
+//! This module provides functionality to check if a given number is a perfect number.
+
 /// Returns true if a number is perfect.
 ///
 /// A perfect number is a positive integer that is equal to the sum of its proper divisors.

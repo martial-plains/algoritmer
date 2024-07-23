@@ -1,3 +1,7 @@
+//! This module provides a function to calculate the ceiling of a floating-point number.
+//!
+//! The `ceil` function returns the smallest integer greater than or equal to the given number.
+
 /// Return the ceiling of x as an Integral.
 ///
 /// The ceiling of a number is the smallest integer greater than or equal to the number.
@@ -36,6 +40,7 @@
 ///
 /// It is important to note that this implementation assumes that the input `number` is within the range of
 /// representable `f32` values. If the input exceeds this range, the behavior of the function is undefined.
+#[must_use]
 pub fn ceil(number: f32) -> i32 {
     if number - (number as i32) as f32 <= 0.0 {
         number as i32

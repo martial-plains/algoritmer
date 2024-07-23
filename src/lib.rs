@@ -1,4 +1,6 @@
 //! # Algorithms for Rust
+#![no_std]
+#![feature(cfg_match, decl_macro)]
 #![deny(
     bad_style,
     dead_code,
@@ -24,8 +26,11 @@
     while_true
 )]
 #![warn(clippy::all, clippy::pedantic, missing_debug_implementations)]
-#![feature(cfg_match, decl_macro)]
-#![no_std]
+#![allow(
+    clippy::cast_possible_truncation,
+    clippy::cast_precision_loss,
+    clippy::module_name_repetitions
+)]
 
 extern crate alloc;
 

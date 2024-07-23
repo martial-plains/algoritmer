@@ -1,3 +1,5 @@
+//! This module provides a function to compute the power of a given base raised to a specified exponent.
+
 /// Returns the power of a number.
 ///
 /// # Arguments
@@ -24,6 +26,7 @@
 /// The fold operation iterates over the range from 1 to `exponent`, inclusive. For each
 /// iteration, the current value of `acc` (which starts with 1) is multiplied by the `base`.
 /// Finally, the resulting value is returned as the power of the number.
+#[must_use]
 pub fn power(base: i32, exponent: i32) -> i32 {
     (1..=exponent).fold(1, |acc, _| -> i32 { acc * base })
 }

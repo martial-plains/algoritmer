@@ -1,3 +1,7 @@
+//! This module provides traits and implementations for finding the absolute maximum and minimum values in a collection.
+//!
+//! The `AbsMax` and `AbsMin` traits define methods for calculating the absolute maximum and minimum values, respectively.
+
 use alloc::vec::Vec;
 
 /// Return the absolute maximum of a list of items.
@@ -20,7 +24,7 @@ impl AbsMin for Vec<i8> {
     type Item = Option<i8>;
     fn abs_min(&self) -> Self::Item {
         self.iter()
-            .map(|&x| (x.clone().abs(), x))
+            .map(|&x| (x.abs(), x))
             .min_by_key(|&(a, _)| a)
             .map(|(_, x)| x)
     }
@@ -30,7 +34,7 @@ impl AbsMin for Vec<i32> {
     type Item = Option<i32>;
     fn abs_min(&self) -> Self::Item {
         self.iter()
-            .map(|&x| (x.clone().abs(), x))
+            .map(|&x| (x.abs(), x))
             .min_by_key(|&(a, _)| a)
             .map(|(_, x)| x)
     }
@@ -40,7 +44,7 @@ impl AbsMin for Vec<i64> {
     type Item = Option<i64>;
     fn abs_min(&self) -> Self::Item {
         self.iter()
-            .map(|&x| (x.clone().abs(), x))
+            .map(|&x| (x.abs(), x))
             .min_by_key(|&(a, _)| a)
             .map(|(_, x)| x)
     }
@@ -50,7 +54,7 @@ impl AbsMax for Vec<i8> {
     type Item = Option<i8>;
     fn abs_max(&self) -> Self::Item {
         self.iter()
-            .map(|&x| (x.clone().abs(), x))
+            .map(|&x| (x.abs(), x))
             .max_by_key(|&(a, _)| a)
             .map(|(_, x)| x)
     }
@@ -60,7 +64,7 @@ impl AbsMax for Vec<i32> {
     type Item = Option<i32>;
     fn abs_max(&self) -> Self::Item {
         self.iter()
-            .map(|&x| (x.clone().abs(), x))
+            .map(|&x| (x.abs(), x))
             .max_by_key(|&(a, _)| a)
             .map(|(_, x)| x)
     }
@@ -70,7 +74,7 @@ impl AbsMax for Vec<i64> {
     type Item = Option<i64>;
     fn abs_max(&self) -> Self::Item {
         self.iter()
-            .map(|&x| (x.clone().abs(), x))
+            .map(|&x| (x.abs(), x))
             .max_by_key(|&(a, _)| a)
             .map(|(_, x)| x)
     }

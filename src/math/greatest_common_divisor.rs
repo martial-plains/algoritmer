@@ -1,3 +1,5 @@
+//! This module provides functions to compute the greatest common divisor (GCD) of a list of nonnegative integers.
+
 /// Computes the greatest common divisor (GCD) of a list of nonnegative integers.
 ///
 /// # Examples
@@ -95,7 +97,7 @@ where
 
 #[cfg(test)]
 mod tests {
-    use crate::math::gcd;
+    use super::gcd;
 
     #[test]
     fn test_gcd() {
