@@ -18,7 +18,7 @@ pub trait Capitalizable {
     /// use algoritmer::strings::Capitalizable;
     ///
     /// let text = "hello world";
-    /// let capitalized = text.capitalize();
+    /// let capitalized = text.capitalized();
     /// assert_eq!(capitalized, "Hello world");
     /// ```
     fn capitalized(&self) -> String;

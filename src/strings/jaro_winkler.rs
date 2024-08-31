@@ -18,7 +18,7 @@ use alloc::{
 ///
 /// let str1 = "martha";
 /// let str2 = "marhta";
-/// println!("{}", str1.jaro_winkler(&str2));
+/// println!("{}", str1.jaro_winklered(&str2));
 /// ```
 ///
 /// # References
@@ -42,7 +42,7 @@ pub trait JaroWinkler {
     ///
     /// let str1 = "martha";
     /// let str2 = "marhta";
-    /// assert_eq!(str1.jaro_winkler(&str2), 0.9611111111111111);
+    /// assert_eq!(str1.jaro_winklered(&str2), 0.9611111111111111);
     /// ```
     fn jaro_winklered(&self, other: &str) -> f64;
 }

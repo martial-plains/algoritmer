@@ -24,11 +24,11 @@ where
     /// use algoritmer::strings::RemoveDuplicates;
     ///
     /// let text = "hello,world,hello,rust";
-    /// let result = text.remove_duplicates(",");
+    /// let result = text.removed_duplicates(",");
     /// assert_eq!(result, "hello,world,rust");
     ///
     /// let text_space = "hello world hello rust";
-    /// let result_space = text_space.remove_duplicates(" ");
+    /// let result_space = text_space.removed_duplicates(" ");
     /// assert_eq!(result_space, "hello world rust");
     /// ```
     fn removed_duplicates(&self, separator: P) -> String;
