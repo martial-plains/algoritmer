@@ -48,6 +48,7 @@ pub trait JaroWinkler {
 }
 
 impl JaroWinkler for str {
+    #[allow(clippy::cast_sign_loss, clippy::cast_possible_wrap)]
     fn jaro_winkler(&self, other: &str) -> f64 {
         let get_matched_chars = |str1: &str, str2: &str| -> String {
             let mut istr2 = str2.to_string();

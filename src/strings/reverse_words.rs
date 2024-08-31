@@ -3,64 +3,104 @@ use alloc::{
     vec::Vec,
 };
 
-/// Reverses the order of characters in a word
-///
-/// # Arguments
-///
-/// * `word` - The word to reverse
-#[must_use]
-pub fn reverse_word(word: &str) -> String {
-    word.chars().rev().collect()
+/// Trait that provides methods for reversing strings and their components.
+pub trait Reversible {
+    /// Reverses the order of characters in a word.
+    ///
+    /// # Arguments
+    ///
+    /// * `word` - The word to reverse.
+    ///
+    /// # Returns
+    ///
+    /// A new `String` with the characters in reverse order.
+    ///
+    /// # Example
+    ///
+    /// ```
+    /// use algoritmer::strings::Reversible;
+    ///
+    /// let reversed = "hello".reversed_word();
+    /// assert_eq!(reversed, "olleh");
+    /// ```
+    fn reversed_word(&self) -> String;
+
+    /// Reverses the order of words in a sentence.
+    ///
+    /// # Arguments
+    ///
+    /// * `sentence` - The sentence to reverse.
+    ///
+    /// # Returns
+    ///
+    /// A new `String` with the words in reverse order.
+    ///
+    /// # Example
+    ///
+    /// ```
+    /// use algoritmer::strings::Reversible;
+    ///
+    /// let reversed = "Rust is awesome".reversed_word_order();
+    /// assert_eq!(reversed, "awesome is Rust");
+    /// ```
+    fn reversed_word_order<P>(&self, pattern: P) -> String
+    where
+        String: From<P>;
+
+    /// Reverses all words longer than `n` characters in a sentence.
+    ///
+    /// # Arguments
+    ///
+    /// * `sentence` - The sentence to process.
+    /// * `n` - The minimum length of a word before it can be reversed.
+    ///
+    /// # Returns
+    ///
+    /// A new `String` with all words longer than `n` characters reversed.
+    ///
+    /// # Example
+    ///
+    /// ```
+    /// use algoritmer::strings::Reversible;
+    ///
+    /// let result = "Rust is great and Java is also great".reverse_words_longer_than(4);
+    /// assert_eq!(result, "Rust is taerg and Java is also taerg");
+    /// ```
+    fn reversed_words_longer_than<P>(&self, n: usize, pattern: P) -> String
+    where
+        String: From<P>;
 }
 
-/// Reverses the words in a sentence.
-///
-/// # Arguments
-///
-/// * `sentence` - The sentence to be reversed.
-#[must_use]
-pub fn reverse_word_order(sentence: &str) -> String {
-    sentence.split(' ').rev().collect()
-}
+impl Reversible for str {
+    fn reversed_word(&self) -> String {
+        self.chars().rev().collect()
+    }
 
-/// Reverse all words that are longer than `n` characters in a sentence.
-///
-/// # Arguments
-///
-/// * `sentence` - The sentence to be reversed.
-/// * `n` - The minimum length of a word before it can be reversed.
-///
-/// # Returns
-///
-/// Returns the sentence with all words that are longer than `n` characters reversed.
-///
-/// # Example
-///
-/// ```
-/// use algoritmer::strings::reverse_words_longer_than;
-///
-/// println!("{}", reverse_words_longer_than("Rust is great and Java is also great", 4));
-///
-/// //Output: Rust is taerg and Java is also taerg
-///
-/// println!("{}", reverse_words_longer_than("1 12 123 1234 54321 654321", 3));
-///
-/// //Output: 1 12 123 1234 12345 123456
-/// ```
-#[must_use]
-#[allow(clippy::module_name_repetitions)]
-pub fn reverse_words_longer_than(sentence: &str, n: usize) -> String {
-    sentence
-        .split_whitespace()
-        .map(|word| {
-            if word.len() > n {
-                reverse_word(word)
-            } else {
-                word.to_string()
-            }
-        })
-        .collect::<Vec<String>>()
-        .join(" ")
+    fn reversed_word_order<P>(&self, pattern: P) -> String
+    where
+        String: From<P>,
+    {
+        self.split_whitespace()
+            .rev()
+            .collect::<Vec<&str>>()
+            .join(&String::from(pattern))
+    }
+
+    fn reversed_words_longer_than<P>(&self, n: usize, pattern: P) -> String
+    where
+        String: From<P>,
+    {
+        self.split_whitespace()
+            .map(|word| {
+                if word.len() > n {
+                    word.chars().rev().collect::<String>()
+                } else {
+                    word.to_string()
+                }
+            })
+            .collect::<Vec<String>>()
+            .join(&String::from(pattern))
+    }
 }
 
 #[cfg(test)]
@@ -69,9 +109,9 @@ mod tests {
 
     use test_case::test_case;
 
-    #[test_case(("Hey wollef sroirraw", 4))]
-    fn test_remove_long_words(data: (&str, usize)) {
-        let actual = reverse_words_longer_than(data.0, data.1);
+    #[test_case("Hey wollef sroirraw", 4)]
+    fn test_remove_long_words(sentence: &str, index: usize) {
+        let actual = sentence.reversed_words_longer_than(index, ' ');
         assert_eq!(actual, "Hey fellow warriors");
     }
 }

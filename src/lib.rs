@@ -1,6 +1,6 @@
 //! # Algorithms for Rust
 #![no_std]
-#![feature(cfg_match, decl_macro)]
+#![feature(cfg_match, decl_macro, step_trait, pattern)]
 #![deny(
     bad_style,
     dead_code,

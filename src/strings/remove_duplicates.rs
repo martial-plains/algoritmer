@@ -1,26 +1,52 @@
-use alloc::{string::String, vec::Vec};
+use alloc::{str::pattern::Pattern, string::String, vec::Vec};
+use hashbrown::HashSet;
 
-/// Remove duplicates from sentence
+/// Trait for removing duplicates from a sentence with a specified separator.
 ///
-/// # Arguments
-///
-/// * `text` - The text to be processed
-///
-/// # Returns
-///
-/// Returns the text without duplicates
-#[must_use]
-pub fn remove_duplicates(text: &str) -> String {
-    text.split_whitespace()
-        .fold(Vec::new(), |mut init, t| {
-            if init.contains(&t) {
-                init
-            } else {
-                init.push(t);
-                init
-            }
-        })
-        .join(" ")
+/// This trait provides a method to remove duplicate elements from a string based on a given separator.
+pub trait RemoveDuplicates<P>
+where
+    P: Pattern,
+{
+    /// Removes duplicates from a string using the specified separator.
+    ///
+    /// # Arguments
+    ///
+    /// * `separator` - A string slice that specifies the separator used to split and join the text.
+    ///
+    /// # Returns
+    ///
+    /// Returns a new `String` without duplicate elements, joined by the specified separator.
+    ///
+    /// # Examples
+    ///
+    /// ```
+    /// use algoritmer::strings::RemoveDuplicates;
+    ///
+    /// let text = "hello,world,hello,rust";
+    /// let result = text.remove_duplicates(",");
+    /// assert_eq!(result, "hello,world,rust");
+    ///
+    /// let text_space = "hello world hello rust";
+    /// let result_space = text_space.remove_duplicates(" ");
+    /// assert_eq!(result_space, "hello world rust");
+    /// ```
+    fn remove_duplicates(&self, separator: P) -> String;
+}
+
+/// Implement the `RemoveDuplicates` trait for `&str`
+impl<P> RemoveDuplicates<P> for &str
+where
+    P: Pattern + Clone,
+    String: From<P>,
+{
+    fn remove_duplicates(&self, separator: P) -> String {
+        let mut seen = HashSet::new();
+        self.split(separator.clone())
+            .filter(|s| seen.insert(s.trim()))
+            .collect::<Vec<_>>()
+            .join(&String::from(separator))
+    }
 }
 
 #[cfg(test)]
@@ -30,7 +56,7 @@ mod tests {
 
     #[test_case("Rust is great and Java is also great", "Rust is great and Java also")]
     fn check_removed_duplicates(text: &str, expected: &str) {
-        let actual = remove_duplicates(text);
+        let actual = text.remove_duplicates(" ");
         assert_eq!(expected, actual);
     }
 }

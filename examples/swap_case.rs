@@ -1,6 +1,6 @@
-use algoritmer::strings::swap_case;
+use algoritmer::strings::CaseSwapper;
 
 fn main() {
-    let value = swap_case("Algorithms");
+    let value = "Algorithms".swaped_case();
     println!("{}", value);
 }

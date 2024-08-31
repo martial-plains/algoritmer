@@ -1,12 +1,11 @@
-use algoritmer::strings::remove_duplicates;
+use algoritmer::strings::RemoveDuplicates;
 
 fn main() {
-    let value = remove_duplicates(
-        "Peter Piper picked a peck of pickled peppers
+    let value = "Peter Piper picked a peck of pickled peppers
             A peck of pickled peppers Peter Piper picked
             If Peter Piper picked a peck of pickled peppers
-            Where’s the peck of pickled peppers Peter Piper picked?",
-    );
+            Where’s the peck of pickled peppers Peter Piper picked?"
+        .remove_duplicates(' ');
 
     println!("{}", value);
 }

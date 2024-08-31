@@ -1,30 +1,3 @@
-/// A pangram or holoalphabetic sentence is a sentence using every letter of a given alphabet at least once
-///
-/// # Arguments
-///
-/// * `text` - The sentence to be checked
-///
-/// # Returns
-///
-/// Returns true if the sentence is a pangram else false
-///
-/// - [Pangram](https://en.wikipedia.org/wiki/Pangram)
-#[must_use]
-pub fn is_pangram(text: &str) -> bool {
-    text.to_ascii_lowercase()
-        .chars()
-        .fold([false; 26], |mut init, ch| {
-            if ch.is_alphabetic() {
-                init[ch as usize - 'a' as usize] = true;
-                init
-            } else {
-                init
-            }
-        })
-        .iter()
-        .all(|f| *f)
-}
-
 /// A trait to check if a string is a pangram.
 ///
 /// A pangram or holoalphabetic sentence is a sentence that uses every letter of the alphabet at least once.
@@ -74,7 +47,7 @@ mod tests {
     #[test_case("The quick brown fox jumps over the la_y do", false)]
     #[test_case("", false)]
     fn check_pangram(sentence: &str, expected: bool) {
-        let actual = is_pangram(sentence);
+        let actual = sentence.is_pangram();
         assert_eq!(expected, actual);
     }
 }
