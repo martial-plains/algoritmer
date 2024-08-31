@@ -34,6 +34,8 @@
 
 extern crate alloc;
 
+mod macros;
+
 pub mod ciphers;
 pub mod dynamic_programming;
 pub mod higher_order_functions;
@@ -43,6 +45,3 @@ pub mod search;
 #[doc = include_str!("sorts/README.md")]
 pub mod sorts;
 pub mod strings;
-pub use hashbrown;
-
-mod macros;
