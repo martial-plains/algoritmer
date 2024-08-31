@@ -2,7 +2,7 @@
 
 use core::iter::{Step, Sum};
 
-use num::Num;
+use num::Signed;
 
 /// Trait to check if a number is perfect.
 ///
@@ -23,13 +23,13 @@ pub trait PerfectNumber {
     /// # Examples
     ///
     /// ```
-    /// use algoritmer::math::is_perfect;
+    /// use algoritmer::math::PerfectNumber;
     ///
-    /// assert_eq!(is_perfect(6), true);
-    /// assert_eq!(is_perfect(28), true);
-    /// assert_eq!(is_perfect(12), false);
-    /// assert_eq!(is_perfect(496), true);
-    /// assert_eq!(is_perfect(10), false);
+    /// assert_eq!(6.is_perfect(), true);
+    /// assert_eq!(28.is_perfect(), true);
+    /// assert_eq!(12.is_perfect(), false);
+    /// assert_eq!(496.is_perfect(), true);
+    /// assert_eq!(10.is_perfect(), false);
     /// ```
     ///
     /// The `is_perfect` function can be used to determine if a given number is perfect. In the examples
@@ -40,10 +40,10 @@ pub trait PerfectNumber {
     /// Lastly, the fifth example checks if 10 is a perfect number, which is false.
     ///
     /// ```
-    /// use algoritmer::math::is_perfect;
+    /// use algoritmer::math::PerfectNumber;
     ///
-    /// assert_eq!(is_perfect(-6), false);
-    /// assert_eq!(is_perfect(0), false);
+    /// assert_eq!((-6).is_perfect(), false);
+    /// assert_eq!((0).is_perfect(), false);
     /// ```
     ///
     /// The function returns false for non-positive numbers (less than or equal to 0) since they are not
@@ -53,7 +53,7 @@ pub trait PerfectNumber {
 
 impl<T> PerfectNumber for T
 where
-    T: Copy + Num + Step + PartialOrd + Sum,
+    T: Copy + Signed + Step + PartialOrd + Sum,
 {
     #[must_use]
     fn is_perfect(&self) -> bool {

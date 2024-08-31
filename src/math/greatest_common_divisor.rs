@@ -83,7 +83,7 @@ where
 /// 4. Now, `q` is zero, so we return `p` (6) as the GCD of the original `p` (24) and `q` (18).
 ///
 /// Therefore, the GCD of 24 and 18 is 6.
-pub fn gcd_cmp<T>(p: T, q: T) -> T
+fn gcd_cmp<T>(p: T, q: T) -> T
 where
     T: num::Unsigned + Copy,
 {

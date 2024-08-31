@@ -40,7 +40,7 @@ pub trait Reversible {
     /// ```
     /// use algoritmer::strings::Reversible;
     ///
-    /// let reversed = "Rust is awesome".reversed_word_order();
+    /// let reversed = "Rust is awesome".reversed_word_order(' ');
     /// assert_eq!(reversed, "awesome is Rust");
     /// ```
     fn reversed_word_order<P>(&self, pattern: P) -> String
@@ -63,7 +63,7 @@ pub trait Reversible {
     /// ```
     /// use algoritmer::strings::Reversible;
     ///
-    /// let result = "Rust is great and Java is also great".reverse_words_longer_than(4);
+    /// let result = "Rust is great and Java is also great".reversed_words_longer_than(4, ' ');
     /// assert_eq!(result, "Rust is taerg and Java is also taerg");
     /// ```
     fn reversed_words_longer_than<P>(&self, n: usize, pattern: P) -> String
