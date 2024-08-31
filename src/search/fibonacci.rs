@@ -1,4 +1,4 @@
-use crate::math::iterative as fibs;
+use crate::math::Fibonacci;
 
 /// A Rust implementation of the Fibonacci search algorithm.
 ///
@@ -24,7 +24,7 @@ where
     let mut next: usize;
 
     loop {
-        if fibs(i) >= length {
+        if i.iterative() >= length {
             next = i;
             break;
         }
@@ -34,13 +34,13 @@ where
     let mut offset = 0;
 
     while next > 0 {
-        let index_k = (offset + fibs(next - 1)).min(length - 1); // Prevent out of bounds
+        let index_k = (offset + (next - 1).iterative()).min(length - 1); // Prevent out of bounds
 
         match arr[index_k].cmp(key) {
             core::cmp::Ordering::Equal => return Some(index_k),
             core::cmp::Ordering::Greater => next -= 1,
             core::cmp::Ordering::Less => {
-                offset += fibs(next - 1);
+                offset += (next - 1).iterative();
                 next -= 1;
             }
         }

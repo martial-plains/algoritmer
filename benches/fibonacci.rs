@@ -11,20 +11,28 @@ static BENCH_SIZE: usize = 10;
 
 #[bench]
 fn recursive_fibonacci(b: &mut Bencher) {
-    b.iter(|| (0..BENCH_SIZE).map(recursive).collect::<Vec<_>>());
+    b.iter(|| {
+        (0..BENCH_SIZE)
+            .map(Fibonacci::recursive)
+            .collect::<Vec<_>>()
+    });
 }
 
 #[bench]
 fn iterative_fibonacci(b: &mut Bencher) {
-    b.iter(|| (0..BENCH_SIZE).map(iterative).collect::<Vec<_>>())
+    b.iter(|| {
+        (0..BENCH_SIZE)
+            .map(Fibonacci::iterative)
+            .collect::<Vec<_>>()
+    })
 }
 
 #[bench]
 fn memoized_fibonacci(b: &mut Bencher) {
-    b.iter(|| (0..BENCH_SIZE).map(memoized).collect::<Vec<_>>())
+    b.iter(|| (0..BENCH_SIZE).map(Fibonacci::memoized).collect::<Vec<_>>())
 }
 
 #[bench]
 fn analytic_fibonacci(b: &mut Bencher) {
-    b.iter(|| (0..BENCH_SIZE).map(analytic).collect::<Vec<_>>())
+    b.iter(|| (0..BENCH_SIZE).map(Fibonacci::analytic).collect::<Vec<_>>())
 }

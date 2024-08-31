@@ -1,6 +1,6 @@
-use algoritmer::math::memoized;
+use algoritmer::math::Fibonacci;
 
 fn main() {
-    let value = memoized(2);
+    let value = 2.memoized();
     println!("{}", value);
 }
