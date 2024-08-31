@@ -9,34 +9,18 @@ use crate::dynamic_programming::memoize;
 /// A trait for calculating Fibonacci numbers using different methods.
 pub trait Fibonacci {
     /// Calculate the nth Fibonacci number recursively.
-    ///
-    /// # Arguments
-    ///
-    /// * `nth` - The nth Fibonacci number to calculate.
     #[must_use]
     fn recursive(self) -> Self;
 
     /// Calculate the nth Fibonacci number imperatively.
-    ///
-    /// # Arguments
-    ///
-    /// * `nth` - The nth Fibonacci number to calculate.
     #[must_use]
     fn iterative(self) -> Self;
 
     /// Calculate the nth Fibonacci number using dynamic programming and memoization.
-    ///
-    /// # Arguments
-    ///
-    /// * `nth` - The nth Fibonacci number to calculate.
     #[must_use]
     fn memoized(self) -> Self;
 
     /// Calculate the nth Fibonacci number using Binet's formula.
-    ///
-    /// # Arguments
-    ///
-    /// * `nth` - The nth Fibonacci number to calculate.
     ///
     /// # Note
     /// This is sufficient to calculate the first 70 Fibonacci numbers.
@@ -50,12 +34,6 @@ pub trait Fibonacci {
 }
 
 impl Fibonacci for usize {
-    /// Calculate the nth Fibonacci number recursively.
-    ///
-    /// # Arguments
-    ///
-    /// * `nth` - The nth Fibonacci number to calculate.
-    #[must_use]
     fn recursive(self) -> usize {
         if self <= 1 {
             self
@@ -64,12 +42,6 @@ impl Fibonacci for usize {
         }
     }
 
-    /// Calculate the nth Fibonacci number imperatively.
-    ///
-    /// # Arguments
-    ///
-    /// * `nth` - The nth Fibonacci number to calculate.
-    #[must_use]
     fn iterative(self) -> usize {
         match self {
             0 => 0,
@@ -87,11 +59,6 @@ impl Fibonacci for usize {
         }
     }
 
-    /// Calculate the nth Fibonacci number using dynamic programming and memoization.
-    ///
-    /// # Arguments
-    ///
-    /// * `nth` - The nth Fibonacci number to calculate.
     fn memoized(self) -> usize {
         fn fib_memo(cache: &mut HashMap<usize, usize>, arg: usize) -> usize {
             match arg {
@@ -103,15 +70,6 @@ impl Fibonacci for usize {
         memoize(&mut HashMap::new(), fib_memo, self)
     }
 
-    /// Calculate the nth Fibonacci number using Binet's formula.
-    ///
-    /// # Arguments
-    ///
-    /// * `nth` - The nth Fibonacci number to calculate.
-    ///
-    /// # Note
-    /// This is sufficient to calculate the first 70 Fibonacci numbers.
-    #[must_use]
     #[allow(
         clippy::cast_possible_truncation,
         clippy::cast_sign_loss,
