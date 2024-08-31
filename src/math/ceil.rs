@@ -15,6 +15,8 @@
 /// ```
 /// use std::f32;
 ///
+/// use algoritmer::math::ceil;
+///
 /// let result = ceil(3.7);
 /// assert_eq!(result, 4);
 ///

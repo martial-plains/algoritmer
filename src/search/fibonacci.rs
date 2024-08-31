@@ -1,4 +1,4 @@
-use crate::math::fibonacci::iterative as fibs;
+use crate::math::iterative as fibs;
 
 /// A Rust implementation of the Fibonacci search algorithm.
 ///

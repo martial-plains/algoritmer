@@ -1,7 +1,7 @@
-use algoritmer::strings::capitalize;
+use algoritmer::strings::Capitalizable;
 
 fn main() {
     let text = String::from("hello world!");
-    let capitalized_text = capitalize(&text);
+    let capitalized_text = text.capitalize();
     println!("{}", capitalized_text);
 }

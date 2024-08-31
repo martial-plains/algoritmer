@@ -25,6 +25,43 @@ pub fn is_pangram(text: &str) -> bool {
         .all(|f| *f)
 }
 
+/// A trait to check if a string is a pangram.
+///
+/// A pangram or holoalphabetic sentence is a sentence that uses every letter of the alphabet at least once.
+///
+/// # Examples
+///
+/// ```
+/// use algoritmer::strings::PangramCheck;
+///
+/// let sentence = "The quick brown fox jumps over the lazy dog";
+/// assert!(sentence.is_pangram());
+/// ```
+pub trait PangramCheck {
+    /// Checks if the implementing string is a pangram.
+    ///
+    /// # Returns
+    ///
+    /// Returns `true` if the string is a pangram, otherwise returns `false`.
+    #[must_use]
+    fn is_pangram(&self) -> bool;
+}
+
+impl PangramCheck for str {
+    fn is_pangram(&self) -> bool {
+        self.to_ascii_lowercase()
+            .chars()
+            .fold([false; 26], |mut init, ch| {
+                if ch.is_alphabetic() {
+                    init[ch as usize - 'a' as usize] = true;
+                }
+                init
+            })
+            .iter()
+            .all(|&f| f)
+    }
+}
+
 #[cfg(test)]
 mod tests {
     use super::*;

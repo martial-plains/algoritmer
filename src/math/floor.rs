@@ -11,6 +11,8 @@
 /// # Examples
 ///
 /// ```
+/// use algoritmer::math::floor;
+///
 /// let result = floor(3.8);
 /// assert_eq!(result, 3);
 ///
@@ -35,9 +37,10 @@
 /// floating-point arithmetic may lead to inaccuracies in the calculated floor value.
 #[must_use]
 pub fn floor(number: f32) -> i32 {
-    if (number as i32) as f32 - number == 0.0 {
-        number as i32
+    let int_part = number as i32;
+    if number < 0.0 && (number - int_part as f32) != 0.0 {
+        int_part - 1
     } else {
-        ((number as i32) as f32 - number) as i32
+        int_part
     }
 }

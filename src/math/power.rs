@@ -10,6 +10,8 @@
 /// # Example
 ///
 /// ```
+/// use algoritmer::math::power;
+///
 /// let result = power(2, 3);
 /// // The base is 2 and the exponent is 3.
 /// // Therefore, the result is 2 * 2 * 2 = 8.

@@ -1,23 +1,5 @@
 use hashbrown::HashMap;
 
-/// Create a `HashMap` from a list of key-value pairs
-///
-/// ## Example
-///
-/// ```
-/// use algoritmer::macros::hashmap;
-///
-/// # fn main() {
-///
-/// let map = hashmap!{
-///     "one" => 1,
-///     "two" => 2,
-/// };
-/// assert_eq!(map["one"], 1);
-/// assert_eq!(map["two"], 2);
-/// assert_eq!(map.get("six"), None);
-/// # }
-/// ```
 pub macro hashmap {
     (@single $($x:tt)*) => (()),
     (@count $($rest:expr),*) => (<[()]>::len(&[$(hashmap!(@single $rest)),*])),
