@@ -1,4 +1,4 @@
-use algorithms::math::fibonacci::memoized;
+use algoritmer::math::fibonacci::memoized;
 
 fn main() {
     let value = memoized(2);

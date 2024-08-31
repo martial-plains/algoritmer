@@ -7,7 +7,7 @@
 /// # Examples
 ///
 /// ```
-/// use algorithms::sorts::bead;
+/// use algoritmer::sorts::bead;
 ///
 /// let mut sequence = [9, 8, 7, 6, 5, 4, 3, 2, 1];
 /// bead(&mut sequence);

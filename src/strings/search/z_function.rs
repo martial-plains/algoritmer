@@ -5,10 +5,9 @@ fn go_next(i: usize, result: &[usize], s: &str) -> bool {
     i + result[i] < s.len() && s.chars().nth(result[i]) == s.chars().nth(i + result[i])
 }
 
-/// This is an efficient algorithm for getting the pattern occurence in
-/// a stirng. For the given pattern this function computes a value for each
-/// index which represents the maximal length substring starting from the index
-/// and is the same as the prefix of the same size
+/// This function implements an efficient algorithm for finding pattern occurrences in a string.
+///
+/// For a given pattern, it computes a value for each index, representing the maximal length substring starting from that index, which matches a prefix of the pattern.
 ///
 /// # Performance
 ///

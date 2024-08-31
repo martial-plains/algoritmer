@@ -9,7 +9,7 @@ use alloc::vec::Vec;
 ///
 ///  # Examples
 /// ```
-/// use algorithms::higher_order_functions::Reductions;
+/// use algoritmer::higher_order_functions::Reductions;
 ///
 /// let numbers = vec![1, 2, 3, 4];
 /// let sum = |a, b| a + b;

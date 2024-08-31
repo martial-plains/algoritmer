@@ -18,7 +18,7 @@ use hashbrown::HashMap;
 ///
 /// ```
 /// use hashbrown::HashMap;
-/// use algorithms::dynamic_programming::memoize;
+/// use algoritmer::dynamic_programming::memoize;
 ///
 /// fn fibonacci(cache: &mut HashMap<u32, u64>, n: u32) -> u64 {
 ///     if n == 0 || n == 1 {

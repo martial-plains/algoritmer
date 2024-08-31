@@ -4,10 +4,11 @@ const ALPHABET_SIZE: isize = 256;
 // Modulus to hash a string
 const MODULUS: isize = 1_000_003;
 
-/// The Rabin-Karp Algorithm for finding a pattern within a piece of text
-/// with complexity O(nm), most efficient when it is used with multiple patterns
-/// as it is able to check if any of a set of patterns match a section of text in o(1)
-/// given the precomputed hashes.
+/// The Rabin-Karp Algorithm efficiently finds a pattern within a piece of text.
+///
+/// With a complexity of O(nm), it is especially effective when used with multiple patterns.
+/// The algorithm can check if any of a set of patterns match a section of text in O(1)
+/// time, given precomputed hashes.
 ///
 /// This will be the simple version which only assumes one pattern is being searched
 /// for but it's not hard to modify

@@ -2,7 +2,7 @@
 
 extern crate test;
 
-use algorithms::sorts::*;
+use algoritmer::sorts::*;
 use test::Bencher;
 
 #[bench]

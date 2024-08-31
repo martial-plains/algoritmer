@@ -5,7 +5,7 @@
 /// # Examples
 ///
 /// ```
-/// use algorithms::math::gcd;
+/// use algoritmer::math::gcd;
 ///
 /// let nums: [u32;3] = [12, 18, 24];
 /// let result = gcd(&nums);
@@ -51,7 +51,7 @@ where
 /// # Examples
 ///
 /// ```
-/// use algorithms::math::gcd_cmp;
+/// use algoritmer::math::gcd_cmp;
 /// use num::Integer;
 ///
 /// let p: u32 = 24;

@@ -38,7 +38,7 @@ where
 /// # Examples
 ///
 /// ```
-/// use algorithms::sorts::bitonic;
+/// use algoritmer::sorts::bitonic;
 ///
 /// let mut arr = [5, 2, 8, 1, 9, 3, 4, 6];
 /// let len = arr.len();

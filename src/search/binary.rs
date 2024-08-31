@@ -1,13 +1,11 @@
 use core::cmp::Ordering;
 
-/// Binary search is a search algorithm that finds the position of a
-/// target within a sorted array. Binary search compares the target
-/// value to the element of the array. If they are not equal, the half
-/// in which the target cannot lie is eliminated and the search
-/// continues on the remaining half, again taking the middle element to
-/// compare to the target value, and repeating this until the target
-/// value is found. If the search ends with the remaining half being
-/// empty, the target is not in the array.
+/// Binary search is an algorithm that locates a target in a sorted array.
+///
+/// It compares the target to the middle element and eliminates half of
+/// the array where the target can't be. This process repeats until the
+/// target is found or the search space is empty, indicating the target
+/// isn't in the array.
 ///
 /// # Arguments
 ///
@@ -21,7 +19,7 @@ use core::cmp::Ordering;
 /// # Examples
 ///
 /// ```
-/// use algorithms::search::binary;
+/// use algoritmer::search::binary;
 ///
 /// let arr = [1, 3, 5, 7, 9];
 /// assert_eq!(binary(&arr, &5), Some(2));

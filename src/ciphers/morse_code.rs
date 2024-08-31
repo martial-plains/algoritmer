@@ -108,7 +108,7 @@ impl MorseCode {
     /// # Examples
     ///
     /// ```
-    /// use algorithms::ciphers::morse_code::MorseCode;
+    /// use algoritmer::ciphers::morse_code::MorseCode;
     ///
     /// let morse = MorseCode::default();
     /// let table = morse.morse_table();

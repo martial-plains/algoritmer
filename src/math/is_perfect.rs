@@ -13,7 +13,7 @@
 /// # Examples
 ///
 /// ```
-/// use algorithms::math::is_perfect;
+/// use algoritmer::math::is_perfect;
 ///
 /// assert_eq!(is_perfect(6), true);
 /// assert_eq!(is_perfect(28), true);
@@ -30,7 +30,7 @@
 /// Lastly, the fifth example checks if 10 is a perfect number, which is false.
 ///
 /// ```
-/// use algorithms::math::is_perfect;
+/// use algoritmer::math::is_perfect;
 ///
 /// assert_eq!(is_perfect(-6), false);
 /// assert_eq!(is_perfect(0), false);

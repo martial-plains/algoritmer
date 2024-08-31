@@ -30,7 +30,7 @@ use core::cmp::Ordering;
 /// # Examples
 ///
 /// ```
-/// use algorithms::search::exponential;
+/// use algoritmer::search::exponential;
 ///
 /// let array = [1, 3, 5, 7, 9, 11, 13];
 /// let key = 7;
@@ -39,7 +39,7 @@ use core::cmp::Ordering;
 /// ```
 ///
 /// ```
-/// use algorithms::search::exponential;
+/// use algoritmer::search::exponential;
 ///
 /// let array = [1, 3, 5, 7, 9, 11, 13];
 /// let key = 10;

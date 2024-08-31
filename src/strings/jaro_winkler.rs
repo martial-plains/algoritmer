@@ -18,7 +18,7 @@ use alloc::{
 /// # Example
 ///
 /// ```
-/// use algorithms::strings::jaro_winkler;
+/// use algoritmer::strings::jaro_winkler;
 ///
 /// println!("{}", jaro_winkler("martha", "marhta"));
 /// println!("{}", jaro_winkler("CRATE", "TRACE"));

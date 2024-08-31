@@ -1,4 +1,4 @@
-use algorithms::strings::capitalize;
+use algoritmer::strings::capitalize;
 
 fn main() {
     let text = String::from("hello world!");

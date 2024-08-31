@@ -5,7 +5,7 @@ use hashbrown::HashMap;
 /// ## Example
 ///
 /// ```
-/// use algorithms::macros::hashmap;
+/// use algoritmer::macros::hashmap;
 ///
 /// # fn main() {
 ///

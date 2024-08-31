@@ -1,4 +1,5 @@
 /// A pure Rust implementation of the bogosort algorithm.
+///
 /// The function successively generates permutations of its input
 /// until it finds one that is sorted
 /// This is a highly inefficient sorting algorithm so it is not

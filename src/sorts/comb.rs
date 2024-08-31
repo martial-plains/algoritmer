@@ -10,7 +10,7 @@
 ///
 /// ```
 ///
-/// use algorithms::sorts::comb;
+/// use algoritmer::sorts::comb;
 ///
 /// let mut data = [0, 5, 3, 2, 2];
 /// comb(&mut data);

@@ -2,7 +2,7 @@
 
 extern crate test;
 
-use algorithms::math::fibonacci::*;
+use algoritmer::math::fibonacci::*;
 
 use test::Bencher;
 

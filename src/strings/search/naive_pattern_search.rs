@@ -14,7 +14,7 @@ use alloc::vec::Vec;
 /// # Examples
 ///
 /// ```rust
-/// use algorithms::strings::search::naive_pattern_search;
+/// use algoritmer::strings::search::naive_pattern_search;
 ///
 /// println!("{:?}", naive_pattern_search("ABAAABCDBBABCDDEBCABC", "ABC"));
 /// println!("{:?}", naive_pattern_search("ABC", "ABAAABCDBBABCDDEBCABC"));

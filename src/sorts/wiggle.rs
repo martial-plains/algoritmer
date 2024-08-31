@@ -9,7 +9,7 @@
 /// # Examples
 ///
 /// ```
-/// use algorithms::sorts::wiggle;
+/// use algoritmer::sorts::wiggle;
 ///
 /// let mut data = [3, 5, 2, 1, 6, 4];
 /// wiggle(&mut data);

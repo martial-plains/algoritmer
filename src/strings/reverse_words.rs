@@ -37,7 +37,7 @@ pub fn reverse_word_order(sentence: &str) -> String {
 /// # Example
 ///
 /// ```
-/// use algorithms::strings::reverse_words_longer_than;
+/// use algoritmer::strings::reverse_words_longer_than;
 ///
 /// println!("{}", reverse_words_longer_than("Rust is great and Java is also great", 4));
 ///

@@ -31,7 +31,7 @@
 /// |   21   |   22   |   23   |   24   |   25   |   26   |   27   |
 ///
 /// ```
-/// use algorithms::sorts::insertion;
+/// use algoritmer::sorts::insertion;
 ///
 /// let mut list = vec![25, 26, 22, 24, 27, 23, 21];
 /// insertion(&mut list);
