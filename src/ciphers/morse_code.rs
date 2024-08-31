@@ -4,7 +4,7 @@
 use alloc::{string::String, vec::Vec};
 use hashbrown::HashMap;
 
-use crate::macros::hashmap;
+use crate::hashmap;
 
 /// Represents the different versions of Morse code.
 #[derive(Debug, Default)]
