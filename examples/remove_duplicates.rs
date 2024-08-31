@@ -5,7 +5,7 @@ fn main() {
             A peck of pickled peppers Peter Piper picked
             If Peter Piper picked a peck of pickled peppers
             Where’s the peck of pickled peppers Peter Piper picked?"
-        .remove_duplicates(' ');
+        .removed_duplicates(' ');
 
     println!("{}", value);
 }

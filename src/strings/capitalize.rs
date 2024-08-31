@@ -21,11 +21,11 @@ pub trait Capitalizable {
     /// let capitalized = text.capitalize();
     /// assert_eq!(capitalized, "Hello world");
     /// ```
-    fn capitalize(&self) -> String;
+    fn capitalized(&self) -> String;
 }
 
 impl Capitalizable for str {
-    fn capitalize(&self) -> String {
+    fn capitalized(&self) -> String {
         if *self == String::new() {
             String::new()
         } else {
@@ -53,7 +53,7 @@ mod tests {
     #[test_case("a", "A")]
     #[test_case("", "")]
     fn does_it_capitalize(sentence: &str, expected: &str) {
-        let actual = sentence.capitalize();
+        let actual = sentence.capitalized();
         assert_eq!(expected, actual);
     }
 }

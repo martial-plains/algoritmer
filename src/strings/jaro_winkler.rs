@@ -44,12 +44,12 @@ pub trait JaroWinkler {
     /// let str2 = "marhta";
     /// assert_eq!(str1.jaro_winkler(&str2), 0.9611111111111111);
     /// ```
-    fn jaro_winkler(&self, other: &str) -> f64;
+    fn jaro_winklered(&self, other: &str) -> f64;
 }
 
 impl JaroWinkler for str {
     #[allow(clippy::cast_sign_loss, clippy::cast_possible_wrap)]
-    fn jaro_winkler(&self, other: &str) -> f64 {
+    fn jaro_winklered(&self, other: &str) -> f64 {
         let get_matched_chars = |str1: &str, str2: &str| -> String {
             let mut istr2 = str2.to_string();
             let mut matched_chars = Vec::new();
@@ -132,6 +132,6 @@ mod tests {
     #[test_case("hell**o", "*world", 0.436_507_936_507_936_5)]
     #[allow(clippy::float_cmp)]
     fn test_jaro_winkler(str1: &str, str2: &str, expected: f64) {
-        assert_eq!(str1.jaro_winkler(str2), expected);
+        assert_eq!(str1.jaro_winklered(str2), expected);
     }
 }

@@ -31,7 +31,7 @@ where
     /// let result_space = text_space.remove_duplicates(" ");
     /// assert_eq!(result_space, "hello world rust");
     /// ```
-    fn remove_duplicates(&self, separator: P) -> String;
+    fn removed_duplicates(&self, separator: P) -> String;
 }
 
 /// Implement the `RemoveDuplicates` trait for `&str`
@@ -40,7 +40,7 @@ where
     P: Pattern + Clone,
     String: From<P>,
 {
-    fn remove_duplicates(&self, separator: P) -> String {
+    fn removed_duplicates(&self, separator: P) -> String {
         let mut seen = HashSet::new();
         self.split(separator.clone())
             .filter(|s| seen.insert(s.trim()))
@@ -56,7 +56,7 @@ mod tests {
 
     #[test_case("Rust is great and Java is also great", "Rust is great and Java also")]
     fn check_removed_duplicates(text: &str, expected: &str) {
-        let actual = text.remove_duplicates(" ");
+        let actual = text.removed_duplicates(" ");
         assert_eq!(expected, actual);
     }
 }
