@@ -34,11 +34,7 @@
 
 extern crate alloc;
 
-mod macros;
-
-pub mod dynamic_programming;
 pub mod higher_order_functions;
-pub mod math;
 #[doc = include_str!("search/README.md")]
 pub mod search;
 #[doc = include_str!("sorts/README.md")]

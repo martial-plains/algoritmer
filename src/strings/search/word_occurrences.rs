@@ -1,4 +1,4 @@
-use hashbrown::HashMap;
+use alloc::vec::Vec;
 
 /// Create a map containing count of each word
 ///
@@ -10,16 +10,18 @@ use hashbrown::HashMap;
 ///
 /// Returns a map containing count of each word
 #[must_use]
-pub fn word_occurrences(text: &str) -> HashMap<&str, u32> {
-    let mut occurrence: HashMap<&str, u32> = HashMap::new();
+pub fn word_occurrences(text: &str) -> Vec<(&str, u32)> {
+    let mut occurrences: Vec<(&str, u32)> = Vec::new();
+
     for word in text.split_ascii_whitespace() {
-        if occurrence.contains_key(word) {
-            let _ = occurrence.entry(word).and_modify(|w| *w += 1);
+        if let Some(entry) = occurrences.iter_mut().find(|(w, _)| *w == word) {
+            entry.1 += 1;
         } else {
-            let _ = occurrence.insert(word, 1);
+            occurrences.push((word, 1));
         }
     }
-    occurrence
+
+    occurrences
 }
 
 #[cfg(test)]
@@ -29,9 +31,9 @@ mod tests {
 
     #[test]
     fn hello_1_world_1() {
-        let mut expected: HashMap<&str, u32> = HashMap::new();
-        let _ = expected.insert("Hello", 1);
-        let _ = expected.insert("World", 1);
+        let mut expected: Vec<(&str, u32)> = Vec::new();
+        let _ = expected.push(("Hello", 1));
+        let _ = expected.push(("World", 1));
         let actual = word_occurrences("Hello World");
         assert_eq!(expected, actual);
     }

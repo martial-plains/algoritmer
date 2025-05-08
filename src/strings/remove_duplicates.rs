@@ -1,5 +1,4 @@
 use alloc::{str::pattern::Pattern, string::String, vec::Vec};
-use hashbrown::HashSet;
 
 /// Trait for removing duplicates from a sentence with a specified separator.
 ///
@@ -41,9 +40,16 @@ where
     String: From<P>,
 {
     fn removed_duplicates(&self, separator: P) -> String {
-        let mut seen = HashSet::new();
+        let mut seen = Vec::new();
         self.split(separator.clone())
-            .filter(|s| seen.insert(s.trim()))
+            .filter(|s| {
+                if !seen.contains(s) {
+                    seen.push(s);
+                    true
+                } else {
+                    false
+                }
+            })
             .collect::<Vec<_>>()
             .join(&String::from(separator))
     }
