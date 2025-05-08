@@ -1,7 +1,5 @@
 use core::cmp::min;
 
-use num::integer::sqrt;
-
 /// A jump search implementation.
 ///
 /// This algorithm works best when the array is sorted.
@@ -23,12 +21,12 @@ where
     T: PartialOrd + Copy,
 {
     let n = arr.len();
-    let mut step = sqrt(n);
+    let mut step = n.isqrt();
     let mut prev = 0;
 
     while arr[min(step, n) - 1] < *key {
         prev = step;
-        step += sqrt(n);
+        step += n.isqrt();
 
         if prev >= n {
             return None;
@@ -43,11 +41,7 @@ where
         }
     }
 
-    if arr[prev] == *key {
-        Some(prev)
-    } else {
-        None
-    }
+    if arr[prev] == *key { Some(prev) } else { None }
 }
 
 #[cfg(test)]
