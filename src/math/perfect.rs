@@ -55,7 +55,6 @@ impl<T> PerfectNumber for T
 where
     T: Copy + Signed + Step + PartialOrd + Sum,
 {
-    #[must_use]
     fn is_perfect(&self) -> bool {
         match self {
             x if *x <= T::zero() => false,
