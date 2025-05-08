@@ -43,10 +43,10 @@
 /// - [Wikipedia](https://en.wikipedia.org/wiki/Insertion_sort)
 pub fn insertion<T>(arr: &mut [T])
 where
-    T: PartialOrd + Copy,
+    T: PartialOrd + Clone,
 {
     for i in 1..arr.len() {
-        let cur = arr[i];
+        let cur = arr[i].clone();
         let mut j = i - 1;
 
         while arr[j] > cur {
@@ -68,10 +68,10 @@ where
 #[allow(clippy::module_name_repetitions)]
 pub fn insertion_until<T>(arr: &mut [T], pivot: usize)
 where
-    T: PartialOrd + Copy,
+    T: PartialOrd + Clone,
 {
     for i in 1..pivot {
-        let cur = arr[i];
+        let cur = arr[i].clone();
         let mut j = i - 1;
 
         while arr[j] > cur {

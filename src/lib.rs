@@ -1,6 +1,6 @@
 //! # Algorithms for Rust
 #![no_std]
-#![feature(step_trait, pattern)]
+#![feature(step_trait, pattern, random)]
 #![deny(
     bad_style,
     dead_code,
