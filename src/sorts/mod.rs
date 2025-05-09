@@ -18,6 +18,7 @@ mod quick;
 mod selection;
 mod shell;
 mod stooge;
+mod tim;
 mod wiggle;
 
 pub use bead::*;
@@ -38,4 +39,5 @@ pub use quick::*;
 pub use selection::*;
 pub use shell::*;
 pub use stooge::*;
+pub use tim::*;
 pub use wiggle::*;
