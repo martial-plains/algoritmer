@@ -1,3 +1,5 @@
+use rand::rng;
+
 /// A pure Rust implementation of the bogosort algorithm.
 ///
 /// The function successively generates permutations of its input
@@ -17,7 +19,6 @@ where
     T: PartialEq + PartialOrd,
 {
     use rand::seq::SliceRandom;
-    use rand::thread_rng;
 
     fn is_sorted<T>(collection: &mut [T]) -> bool
     where
@@ -34,7 +35,7 @@ where
         true
     }
 
-    let mut rng = thread_rng();
+    let mut rng = rng();
 
     while !is_sorted(arr) {
         arr.shuffle(&mut rng);
